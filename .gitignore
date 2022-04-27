@@ -9,6 +9,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.ipch
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -90,6 +91,7 @@ StyleCopReport.xml
 *.tmp_proj
 *_wpftmp.csproj
 *.log
+*.tlog
 *.vspscc
 *.vssscc
 .builds
@@ -109,8 +111,9 @@ ipch/
 *.sdf
 *.cachefile
 *.VC.db
-*.VC.VC.opendb
-
+*.VC.opendb
+*.VC.db-wal
+*.VC.db-shm
 # Visual Studio profiler
 *.psess
 *.vsp
