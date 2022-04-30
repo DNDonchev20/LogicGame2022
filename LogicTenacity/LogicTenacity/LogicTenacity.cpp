@@ -24,10 +24,27 @@ pTwoPyramid[5][5] = { "-", "-", "-", "-", "-", " ",
 "-", "-", "-", "-", " ", "-", "-", "-", " ", " ", " ", "-", "-", " ", " ", " ", "-", " ", " " };
 bool pOneWins = false, pTwoWins = false;
 
-bool spaceCheck(string stringForCheck)
+
+void inputCheckpOne()
 {
+    if (pOneChosenIndex < 0 || pOneChosenIndex > 3)
+    {
+        cout << "That's not real cards index. Please try again!" << endl;
+        cin >> pOneChosenIndex;
+        inputCheckpOne();
+    }
 
 }
+void inputCheckpTwo()
+{
+    if (pTwoChosenIndex < 0 || pTwoChosenIndex > 3)
+    {
+        cout << "That's not real cards index. Please try again!" << endl;
+        cin >> pTwoChosenIndex;
+        inputCheckpTwo();
+    }
+}
+
 void fillingCardArrays()
 {
     //filling the arrays
@@ -51,25 +68,46 @@ void RandomizingPlayerCardsInput()
 {
     srand(time(0));
 
+    cout << "Player two cards are: ";
     for (int i = 0; i < 4; i++)
     {
         //gets random index from array
         int randomIndex = rand() % 48;
-        pOne[i] = cards[randomIndex];
+        if (cards[randomIndex] == "")
+        {
+            i--;
+        }
+        else if (cards[randomIndex] != "") {
+            pOne[i] = cards[randomIndex];
 
-        //set whitespace element for future checks
-        cards[randomIndex].erase(0);
+            //set whitespace element for future checks
+            cards[randomIndex].erase();
+            cout << pOne[i] << " ";
+        }
+
     }
 
+    cout << endl;
+
+    cout << "Player two cards are: ";
     for (int i = 0; i < 4; i++)
     {
         //gets random index from array
         int randomIndex = rand() % 48;
-        pTwo[i] = cards[randomIndex];
+        if (cards[randomIndex] == "")
+        {
+            i--;
+        }
+        else if (cards[randomIndex] != "") {
+            pTwo[i] = cards[randomIndex];
 
-        //set whitespace element for future checks
-        cards[randomIndex].erase(0);
+            //set whitespace element for future checks
+            cards[randomIndex].erase();
+            cout << pTwo[i] << " ";
+        }
+
     }
+    cout << endl;
 }
 
 // Shuffle array
@@ -90,42 +128,44 @@ void checksFirstRow()
 
     for (int i = 0; i < 6; i++)
     {
+
         if (baseCards[i] == "10" && baseCards[i + 1] == "01")
         {
         playerOneWrong1:
             cin >> pOneChosenIndex;
+            inputCheckpOne();
             cout << endl;
             if (pOne[pOneChosenIndex] == "1or")
             {
-                pOnePyramid[i][0] = pOne[pOneChosenIndex];
+                pOnePyramid[0][i] = pOne[pOneChosenIndex];
                 pOne[pOneChosenIndex].erase(0);
             }
             else if (pOne[pOneChosenIndex] == "1and")
             {
                 cout << "Wrong card";
-                i--;
+
                 goto playerOneWrong1;
             }
             else if (pOne[pOneChosenIndex] == "1xor")
             {
-                pOnePyramid[i][0] = pOne[pOneChosenIndex];
+                pOnePyramid[0][i] = pOne[pOneChosenIndex];
                 pOne[pOneChosenIndex].erase(0);
             }
             else if (pOne[pOneChosenIndex] == "0or")
             {
                 cout << "Wrong card";
-                i--;
+
                 goto playerOneWrong1;
             }
             else if (pOne[pOneChosenIndex] == "0and")
             {
-                pOnePyramid[i][0] = pOne[pOneChosenIndex];
+                pOnePyramid[0][i] = pOne[pOneChosenIndex];
                 pOne[pOneChosenIndex].erase(0);
             }
             else if (pOne[pOneChosenIndex] == "0xor")
             {
                 cout << "Wrong card";
-                i--;
+
                 goto playerOneWrong1;
             }
             else
@@ -136,37 +176,38 @@ void checksFirstRow()
             //here statrs player two turn
         playerTwoWrong1:
             cin >> pTwoChosenIndex;
+            inputCheckpTwo();
             if (pTwo[pTwoChosenIndex] == "1or")
             {
-                pTwoPyramid[i][0] = pTwo[pTwoChosenIndex];
+                pTwoPyramid[0][i] = pTwo[pTwoChosenIndex];
                 pTwo[pTwoChosenIndex].erase(0);
             }
             else if (pTwo[pTwoChosenIndex] == "1and")
             {
                 cout << "Wrong card";
-                i--;
+
                 goto playerTwoWrong1;
             }
             else if (pTwo[pTwoChosenIndex] == "1xor")
             {
-                pTwoPyramid[i][0] = pTwo[pTwoChosenIndex];
+                pTwoPyramid[0][i] = pTwo[pTwoChosenIndex];
                 pTwo[pTwoChosenIndex].erase(0);
             }
             else if (pTwo[pTwoChosenIndex] == "0or")
             {
                 cout << "Wrong card";
-                i--;
+
                 goto playerTwoWrong1;
             }
             else if (pTwo[pTwoChosenIndex] == "0and")
             {
-                pTwoPyramid[i][0] = pTwo[pTwoChosenIndex];
+                pTwoPyramid[0][i] = pTwo[pTwoChosenIndex];
                 pTwo[pTwoChosenIndex].erase(0);
             }
             else if (pTwo[pTwoChosenIndex] == "0xor")
             {
                 cout << "Wrong card";
-                i--;
+
                 goto playerTwoWrong1;
             }
             else
@@ -178,38 +219,39 @@ void checksFirstRow()
         {
         playerOneWrong2:
             cin >> pOneChosenIndex;
+            inputCheckpOne();
             cout << endl;
             if (pOne[pOneChosenIndex] == "1or")
             {
-                pOnePyramid[i][0] = pOne[pOneChosenIndex];
+                pOnePyramid[0][i] = pOne[pOneChosenIndex];
                 pOne[pOneChosenIndex].erase(0);
             }
             else if (pOne[pOneChosenIndex] == "1and")
             {
-                pOnePyramid[i][0] = pOne[pOneChosenIndex];
+                pOnePyramid[0][i] = pOne[pOneChosenIndex];
                 pOne[pOneChosenIndex].erase(0);
             }
             else if (pOne[pOneChosenIndex] == "1xor")
             {
                 cout << "Wrong card";
-                i--;
+
                 goto playerOneWrong2;
             }
             else if (pOne[pOneChosenIndex] == "0or")
             {
                 cout << "Wrong card";
-                i--;
+
                 goto playerOneWrong2;
             }
             else if (pOne[pOneChosenIndex] == "0and")
             {
                 cout << "Wrong card";
-                i--;
+
                 goto playerOneWrong2;
             }
             else if (pOne[pOneChosenIndex] == "0xor")
             {
-                pOnePyramid[i][0] = pOne[pOneChosenIndex];
+                pOnePyramid[0][i] = pOne[pOneChosenIndex];
                 pOne[pOneChosenIndex].erase(0);
             }
             else
@@ -220,38 +262,39 @@ void checksFirstRow()
             //here statrs player two turn
         playerTwoWrong2:
             cin >> pTwoChosenIndex;
+            inputCheckpTwo();
 
             if (pTwo[pTwoChosenIndex] == "1or")
             {
                 cout << "Wrong card";
-                i--;
+
                 goto playerTwoWrong2;
             }
             else if (pTwo[pTwoChosenIndex] == "1and")
             {
                 cout << "Wrong card";
-                i--;
+
                 goto playerTwoWrong2;
             }
             else if (pTwo[pTwoChosenIndex] == "1xor")
             {
                 cout << "Wrong card";
-                i--;
+
                 goto playerTwoWrong2;
             }
             else if (pTwo[pTwoChosenIndex] == "0or")
             {
-                pTwoPyramid[i][0] = pTwo[pTwoChosenIndex];
+                pTwoPyramid[0][i] = pTwo[pTwoChosenIndex];
                 pTwo[pTwoChosenIndex].erase(0);
             }
             else if (pTwo[pTwoChosenIndex] == "0and")
             {
-                pTwoPyramid[i][0] = pTwo[pTwoChosenIndex];
+                pTwoPyramid[0][i] = pTwo[pTwoChosenIndex];
                 pTwo[pTwoChosenIndex].erase(0);
             }
             else if (pTwo[pTwoChosenIndex] == "0xor")
             {
-                pTwoPyramid[i][0] = pTwo[pTwoChosenIndex];
+                pTwoPyramid[0][i] = pTwo[pTwoChosenIndex];
                 pTwo[pTwoChosenIndex].erase(0);
             }
             else
@@ -265,38 +308,39 @@ void checksFirstRow()
         {
         playerOneWrong3:
             cin >> pOneChosenIndex;
+            inputCheckpOne();
             cout << endl;
             if (pOne[pOneChosenIndex] == "1or")
             {
                 cout << "Wrong card";
-                i--;
+
                 goto playerOneWrong3;
             }
             else if (pOne[pOneChosenIndex] == "1and")
             {
                 cout << "Wrong card";
-                i--;
+
                 goto playerOneWrong3;
             }
             else if (pOne[pOneChosenIndex] == "1xor")
             {
                 cout << "Wrong card";
-                i--;
+
                 goto playerOneWrong3;
             }
             else if (pOne[pOneChosenIndex] == "0or")
             {
-                pOnePyramid[i][0] = pOne[pOneChosenIndex];
+                pOnePyramid[0][i] = pOne[pOneChosenIndex];
                 pOne[pOneChosenIndex].erase(0);
             }
             else if (pOne[pOneChosenIndex] == "0and")
             {
-                pOnePyramid[i][0] = pOne[pOneChosenIndex];
+                pOnePyramid[0][i] = pOne[pOneChosenIndex];
                 pOne[pOneChosenIndex].erase(0);
             }
             else if (pOne[pOneChosenIndex] == "0xor")
             {
-                pOnePyramid[i][0] = pOne[pOneChosenIndex];
+                pOnePyramid[0][i] = pOne[pOneChosenIndex];
                 pOne[pOneChosenIndex].erase(0);
             }
             else
@@ -307,38 +351,39 @@ void checksFirstRow()
             //here statrs player two turn
         playerTwoWrong3:
             cin >> pTwoChosenIndex;
+            inputCheckpTwo();
 
             if (pTwo[pTwoChosenIndex] == "1or")
             {
-                pTwoPyramid[i][0] = pTwo[pTwoChosenIndex];
+                pTwoPyramid[0][i] = pTwo[pTwoChosenIndex];
                 pTwo[pTwoChosenIndex].erase(0);
             }
             else if (pTwo[pTwoChosenIndex] == "1and")
             {
-                pTwoPyramid[i][0] = pTwo[pTwoChosenIndex];
+                pTwoPyramid[0][i] = pTwo[pTwoChosenIndex];
                 pTwo[pTwoChosenIndex].erase(0);
             }
             else if (pTwo[pTwoChosenIndex] == "1xor")
             {
                 cout << "Wrong card";
-                i--;
+
                 goto playerTwoWrong3;
             }
             else if (pTwo[pTwoChosenIndex] == "0or")
             {
                 cout << "Wrong card";
-                i--;
+
                 goto playerTwoWrong3;
             }
             else if (pTwo[pTwoChosenIndex] == "0and")
             {
                 cout << "Wrong card";
-                i--;
+
                 goto playerTwoWrong3;
             }
             else if (pTwo[pTwoChosenIndex] == "0xor")
             {
-                pTwoPyramid[i][0] = pTwo[pTwoChosenIndex];
+                pTwoPyramid[0][i] = pTwo[pTwoChosenIndex];
                 pTwo[pTwoChosenIndex].erase(0);
             }
             else
