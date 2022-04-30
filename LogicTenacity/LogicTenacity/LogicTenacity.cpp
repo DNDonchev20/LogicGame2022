@@ -67,7 +67,7 @@ void fillingCardArrays()
 void RandomizingPlayerCardsInput()
 {
     srand(time(0));
-
+       
     cout << "Player two cards are: ";
     for (int i = 0; i < 4; i++)
     {
@@ -77,14 +77,14 @@ void RandomizingPlayerCardsInput()
         {
             i--;
         }
-        else if (cards[randomIndex] != "") {
+        else if(cards[randomIndex] != ""){
             pOne[i] = cards[randomIndex];
 
             //set whitespace element for future checks
             cards[randomIndex].erase();
             cout << pOne[i] << " ";
         }
-
+        
     }
 
     cout << endl;
@@ -98,14 +98,14 @@ void RandomizingPlayerCardsInput()
         {
             i--;
         }
-        else if (cards[randomIndex] != "") {
+        else if(cards[randomIndex] != ""){
             pTwo[i] = cards[randomIndex];
 
             //set whitespace element for future checks
             cards[randomIndex].erase();
             cout << pTwo[i] << " ";
         }
-
+        
     }
     cout << endl;
 }
@@ -394,10 +394,49 @@ void checksFirstRow()
     }
 }
 
-void buildPyramid()
+/*void buildPyramindPOne()
 {
-
+    for (int i = 0; i < 5; i++)
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            if (pOnePyramid[i][j] == "")
+            {
+                continue;
+            }
+            else {
+                cout << pOnePyramid[i][j] << " ";
+            }
+        }
+        cout << endl;
+    }
 }
+
+void outputBasecards()
+{
+    for (int i = 0; i < 6; i++)
+    {
+        cout << baseCards[i] << " ";
+    }
+}
+
+void buildPyramindPTwo()
+{
+    for (int i = 0; i < 5; i++)
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            if (pTwoPyramid[i][j] == "")
+            {
+                continue;
+            }
+            else {
+                cout << pTwoPyramid[i][j] << " ";
+            }
+        }
+        cout << endl;
+    }
+}*/
 
 int main()
 {
@@ -405,5 +444,5 @@ int main()
     RandomizingPlayerCardsInput();
     shuffle_array();
     checksFirstRow();
-    buildPyramid();
+
 }
