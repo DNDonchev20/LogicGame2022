@@ -4,31 +4,34 @@
 #include <vector>
 #include <iomanip>
 using namespace std;
+using namespace vars;
 
-//all cards
-string cards[48];
-string baseCardspOne[6];
-string baseCardspTwo[6];
+namespace vars {
+    //all cards
+    string cards[48];
+    string baseCardspOne[6];
+    string baseCardspTwo[6];
 
-int pOneChosenIndex = 0;
-int pTwoChosenIndex = 0;
+    int pOneChosenIndex = 0;
+    int pTwoChosenIndex = 0;
 
-int pOneChosenCard = 0;
-int pTwoChosenCard = 0;
+    int pOneChosenCard = 0;
+    int pTwoChosenCard = 0;
 
-//stage 3 and 4
-char notCards[2];
+    //stage 3 and 4
+    char notCards[2];
 
-//players  
-//gamemode 1
-string pOne[4], pTwo[4];
-string pOnePyramid[5][5] = { "-", "-", "-", "-", "-", " ",
-"-", "-", "-", "-", " ", "-", "-", "-", " ", " ", " ", "-", "-", " ", " ", " ", "-", " ", " " },
+    //players  
+    //gamemode 1
+    string pOne[4], pTwo[4];
+    string pOnePyramid[5][5] = { "-", "-", "-", "-", "-", " ",
+    "-", "-", "-", "-", " ", "-", "-", "-", " ", " ", " ", "-", "-", " ", " ", " ", "-", " ", " " },
 
-pTwoPyramid[5][5] = { "-", "-", "-", "-", "-", " ",
-"-", "-", "-", "-", " ", "-", "-", "-", " ", " ", " ", "-", "-", " ", " ", " ", "-", " ", " " };
-bool pOneWins = false, pTwoWins = false;
+    pTwoPyramid[5][5] = { "-", "-", "-", "-", "-", " ",
+    "-", "-", "-", "-", " ", "-", "-", "-", " ", " ", " ", "-", "-", " ", " ", " ", "-", " ", " " };
 
+    bool pOneWins = false, pTwoWins = false;
+}
 
 void fillingCardArrays()
 {
@@ -155,6 +158,8 @@ int inputChosenIndex()
     int playerChosenIndex;
     cout << "Select an index";
     cin >> playerChosenIndex;
+
+    return playerChosenIndex;
 }
 
 
