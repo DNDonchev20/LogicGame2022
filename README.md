@@ -33,7 +33,7 @@
     <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-2038874-1720087.png" width=52px height=52px>
     <img src="https://cdn.iconscout.com/icon/free/png-256/sass-226054.png" width=52px height=52px>
 
-## 
+###
 [Documentation and presentation] (https://codingburgas-my.sharepoint.com/:f:/g/personal/tstranev20_codingburgas_bg/EvGfyTAxSpJMulwWWIAur1ABmz1QIyV8_Wdg8B6KwerNDA?e=2CHNPl)
   ---
   
