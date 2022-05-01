@@ -36,9 +36,10 @@
 ## <p id = "docAndPres"> 📄 Documentation and presentation</p>
 You can find them on the following links:
 <br>
-<a href="https://codingburgas-my.sharepoint.com/:w:/g/personal/dndonchev20_codingburgas_bg/EZBtZE0HSzVNqN5Yv2wHTdIB0EyNiJTUaETccR86eT95Sg?e=BeabPZ">Documentation</a>
+<img src="https://media.discordapp.net/attachments/815253581149896790/818133539903111188/Microsoft_Word_logo.png" width="20"> Word - Documentation
 <br>
-<a href="https://codingburgas-my.sharepoint.com/:p:/g/personal/dndonchev20_codingburgas_bg/EZ35ERZ3V5BFgRtNFyJ1s74B-PAO-JzO_ZIib-JKRmeHNA?e=H3EFuD">Presentation</a>
+<img src="https://media.discordapp.net/attachments/815253581149896790/818136011359518780/kisspng-microsoft-powerpoint-computer-software-microsoft-o-5b3b3927c75c49.3318087715306079118166-rem.png" width="20"> PowerPoint - Presentation
+<br>
 
 ## <p id = "about">🧐 About <a name = "about">our website</a></p>
 А website that has information on the most common things before, during and after World War II
