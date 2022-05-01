@@ -20,14 +20,19 @@ int pTwoChosenCard = 0;
 char notCards[2];
 bool playerTurn = true;
 
+
+//choise to place or to discard a card
+string choise;
+
 //players  
 //gamemode 1
-string pOne[4], pTwo[4];
+string pOne[5], pTwo[5];
 
 string pOnePyramid[15], pTwoPyramid[15];
 
 
 bool pOneWins = false, pTwoWins = false;
+
 
 void fillingCardArrays()
 {
@@ -55,9 +60,7 @@ void fillingCardArrays()
 void RandomizingPlayerCardsInput()
 {
     srand(time(0));
-
-    cout << "Player one cards are: ";
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 5; i++)
     {
         //gets random index from array
         int randomIndex = rand() % 48;
@@ -70,15 +73,11 @@ void RandomizingPlayerCardsInput()
 
             //set whitespace element for future checks
             cards[randomIndex].erase();
-            cout << i + 1 << ". " << pOne[i] << " ";
         }
 
     }
 
-    cout << endl;
-
-    cout << "Player two cards are: ";
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 5; i++)
     {
         //gets random index from array
         int randomIndex = rand() % 48;
@@ -91,11 +90,9 @@ void RandomizingPlayerCardsInput()
 
             //set whitespace element for future checks
             cards[randomIndex].erase();
-            cout << i + 1 << ". " << pTwo[i] << " ";
         }
 
     }
-    cout << endl;
 }
 
 void buildPyramindspOne()
@@ -160,6 +157,24 @@ void shuffle_array()
     }
 }
 
+void outputPlyerCards()
+{
+    cout << "Player one cards are: ";
+    for (int i = 0; i < 5; i++)
+    {
+        cout << i + 1 << ". " << pOne[i] << " ";
+    }
+
+    cout << endl;
+
+    cout << "Player two cards are: ";
+    for (int i = 0; i < 5; i++)
+    {
+        cout << i + 1 << ". " << pTwo[i] << " ";
+    }
+    cout << endl;
+}
+
 void drawPyramids()
 {
     cout << endl;
@@ -186,6 +201,37 @@ void drawPyramids()
     cout << endl;
 
     buildPyramindspTwo();
+}
+
+void allRendering()
+{
+    outputPlyerCards();
+    drawPyramids();
+}
+
+void choiseF()
+{
+    cout << "Do you want to play or delete a card?" << endl;
+    cin >> choise;
+
+    if (choise == "Place" || choise == "place")
+    {
+        //placeCard()
+    }
+    else if (choise == "Delete" || choise == "delete")
+    {
+
+    }
+    else
+    {
+        cout << "Wrong input plese try again";
+        system("pause");
+        system("cls");
+        allRendering();
+        choiseF();
+    }
+
+    cout << endl;
 }
 
 void inputCheckpOne()
@@ -239,8 +285,11 @@ int inputChosenIndex()
 
 int main()
 {
+    
     fillingCardArrays();
-    RandomizingPlayerCardsInput();
     shuffle_array();
-    drawPyramids();
+    RandomizingPlayerCardsInput();
+    
+    allRendering();
+    choiseF();
 }
