@@ -33,10 +33,12 @@
     <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-2038874-1720087.png" width=52px height=52px>
     <img src="https://cdn.iconscout.com/icon/free/png-256/sass-226054.png" width=52px height=52px>
 
-## <p id = "docAndPres"> 📄 Documentation and presentation</p>
+## 📄 [Documentation and presentation] (https://codingburgas-my.sharepoint.com/:f:/g/personal/tstranev20_codingburgas_bg/EvGfyTAxSpJMulwWWIAur1ABmz1QIyV8_Wdg8B6KwerNDA?e=2CHNPl)
+  ---
+  
 You can find them on the following links:
 <br>
-<img src="https://media.discordapp.net/attachments/815253581149896790/818133539903111188/Microsoft_Word_logo.png" width="20"> [Word - Documentation] 
+<img src="https://media.discordapp.net/attachments/815253581149896790/818133539903111188/Microsoft_Word_logo.png" width="20"> Word - Documentation
 (https://codingburgas-my.sharepoint.com/:w:/g/personal/tstranev20_codingburgas_bg/EWfJfgEJ9v5Mq4eX3yDvB1UB2hym1mPcyM8mHyehA7rI_w?e=mRdMny)
 <br>
 <img src="https://media.discordapp.net/attachments/815253581149896790/818136011359518780/kisspng-microsoft-powerpoint-computer-software-microsoft-o-5b3b3927c75c49.3318087715306079118166-rem.png" width="20"> PowerPoint - Presentation
