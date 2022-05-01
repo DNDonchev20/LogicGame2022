@@ -32,13 +32,16 @@
     <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png"/>
     <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-2038874-1720087.png" width=52px height=52px>
     <img src="https://cdn.iconscout.com/icon/free/png-256/sass-226054.png" width=52px height=52px>
-
-## <p id = "docAndPres"> 📄 Documentation and presentation</p>
+###
+[Documentation and presentation] (https://codingburgas-my.sharepoint.com/:f:/g/personal/tstranev20_codingburgas_bg/EvGfyTAxSpJMulwWWIAur1ABmz1QIyV8_Wdg8B6KwerNDA?e=2CHNPl)
+  ---
+  
 You can find them on the following links:
 <br>
-<a href="https://codingburgas-my.sharepoint.com/:w:/g/personal/dndonchev20_codingburgas_bg/EZBtZE0HSzVNqN5Yv2wHTdIB0EyNiJTUaETccR86eT95Sg?e=BeabPZ">Documentation</a>
+<img src="https://media.discordapp.net/attachments/815253581149896790/818133539903111188/Microsoft_Word_logo.png" width="20"> Word - Documentation
 <br>
-<a href="https://codingburgas-my.sharepoint.com/:p:/g/personal/dndonchev20_codingburgas_bg/EZ35ERZ3V5BFgRtNFyJ1s74B-PAO-JzO_ZIib-JKRmeHNA?e=H3EFuD">Presentation</a>
+<img src="https://media.discordapp.net/attachments/815253581149896790/818136011359518780/kisspng-microsoft-powerpoint-computer-software-microsoft-o-5b3b3927c75c49.3318087715306079118166-rem.png" width="20"> PowerPoint - Presentation
+<br>
 
 ## <p id = "about">🧐 About <a name = "about">our website</a></p>
 А website that has information on the most common things before, during and after World War II
