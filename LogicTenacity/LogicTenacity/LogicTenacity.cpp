@@ -4,34 +4,30 @@
 #include <vector>
 #include <iomanip>
 using namespace std;
-using namespace vars;
 
-namespace vars {
-    //all cards
-    string cards[48];
-    string baseCardspOne[6];
-    string baseCardspTwo[6];
+//all cards
+string cards[48];
+string baseCardspOne[6];
+string baseCardspTwo[6];
 
-    int pOneChosenIndex = 0;
-    int pTwoChosenIndex = 0;
+int pOneChosenIndex = 0;
+int pTwoChosenIndex = 0;
 
-    int pOneChosenCard = 0;
-    int pTwoChosenCard = 0;
+int pOneChosenCard = 0;
+int pTwoChosenCard = 0;
 
-    //stage 3 and 4
-    char notCards[2];
+//stage 3 and 4
+char notCards[2];
+bool playerTurn = true;
 
-    //players  
-    //gamemode 1
-    string pOne[4], pTwo[4];
-    string pOnePyramid[5][5] = { "-", "-", "-", "-", "-", " ",
-    "-", "-", "-", "-", " ", "-", "-", "-", " ", " ", " ", "-", "-", " ", " ", " ", "-", " ", " " },
+//players  
+//gamemode 1
+string pOne[4], pTwo[4];
 
-    pTwoPyramid[5][5] = { "-", "-", "-", "-", "-", " ",
-    "-", "-", "-", "-", " ", "-", "-", "-", " ", " ", " ", "-", "-", " ", " ", " ", "-", " ", " " };
+string pOnePyramid[15], pTwoPyramid[15];
 
-    bool pOneWins = false, pTwoWins = false;
-}
+
+bool pOneWins = false, pTwoWins = false;
 
 void fillingCardArrays()
 {
@@ -47,15 +43,19 @@ void fillingCardArrays()
     //baseCards arrays
     fill(begin(baseCardspOne), begin(baseCardspOne) + 3, "1");
     fill(begin(baseCardspOne) + 3, begin(baseCardspOne) + 6, "0");
- 
+
     //notCards array
     fill(begin(notCards), begin(notCards) + 2, '!');
+
+    //Pyramid arrays
+    fill(begin(pOnePyramid), end(pOnePyramid), "-");
+    fill(begin(pTwoPyramid), end(pTwoPyramid), "-");
 }
 
 void RandomizingPlayerCardsInput()
 {
     srand(time(0));
-       
+
     cout << "Player one cards are: ";
     for (int i = 0; i < 4; i++)
     {
@@ -65,14 +65,14 @@ void RandomizingPlayerCardsInput()
         {
             i--;
         }
-        else if(cards[randomIndex] != ""){
+        else if (cards[randomIndex] != "") {
             pOne[i] = cards[randomIndex];
 
             //set whitespace element for future checks
             cards[randomIndex].erase();
             cout << i + 1 << ". " << pOne[i] << " ";
         }
-        
+
     }
 
     cout << endl;
@@ -86,49 +86,113 @@ void RandomizingPlayerCardsInput()
         {
             i--;
         }
-        else if(cards[randomIndex] != ""){
+        else if (cards[randomIndex] != "") {
             pTwo[i] = cards[randomIndex];
 
             //set whitespace element for future checks
             cards[randomIndex].erase();
             cout << i + 1 << ". " << pTwo[i] << " ";
         }
-        
+
     }
     cout << endl;
+}
+
+void buildPyramindspOne()
+{
+    int counter = 0;
+    cout << setw(2);
+    for (int i = 1; i < 6; i++)
+    {
+        for (int space = 1; space < i; space++)
+        {
+            cout << " ";
+        }
+
+        for (int j = i; j < 6; j++)
+        {
+            counter++;
+            cout << pOnePyramid[i] << " ";
+        }
+        cout << setw(2);
+        cout << endl;
+    }
+
+    
+}
+
+void buildPyramindspTwo()
+{
+    int counter = 0;
+    cout << setw(2);
+    for (int i = 1; i < 6; i++)
+    {
+        for (int space = 1; space < i; space++)
+        {
+            cout << " ";
+        }
+
+        for (int j = i; j < 6; j++)
+        {
+            counter++;
+            cout << pTwoPyramid[i] << " ";
+        }
+        cout << setw(2);
+        cout << endl;
+    }
 }
 
 // Shuffle array
 void shuffle_array()
 {
     random_shuffle(begin(baseCardspOne), end(baseCardspOne));
-    cout << "Player one base cards: " << setw(56) << "Player two base cards are : " << endl;
-    for(int i = 0; i < 6; i++)
+    
+    for (int i = 0; i < 6; i++)
     {
-        if(baseCardspOne[i] == "1")
+        if (baseCardspOne[i] == "1")
         {
             baseCardspTwo[i] = "0";
         }
-        else if(baseCardspOne[i] == "0")
+        else if (baseCardspOne[i] == "0")
         {
             baseCardspTwo[i] = "1";
         }
+    }
+}
+
+void drawPyramids()
+{
+    cout << endl;
+    cout << "Player one pyramid: " << endl;
+
+    for (int i = 0; i < 6; i++)
+    {
         cout << baseCardspOne[i] << " ";
     }
 
-    cout << setw(40);
+    cout << endl;
+
+    buildPyramindspOne();
+
+    cout << endl;
+
+    cout << "Player two pyramid: " << endl;
+
     for (int i = 0; i < 6; i++)
     {
         cout << baseCardspTwo[i] << " ";
     }
+
     cout << endl;
+
+    buildPyramindspTwo();
 }
 
 void inputCheckpOne()
 {
     if (pOneChosenIndex < 0 || pOneChosenIndex > 3)
     {
-        cout << "That's not real cards index. Please try again!" << endl;
+        cout << "That's not real card index. Please try again!" << endl;
         cin >> pOneChosenIndex;
         inputCheckpOne();
     }
@@ -138,7 +202,7 @@ void inputCheckpTwo()
 {
     if (pTwoChosenIndex < 0 || pTwoChosenIndex > 3)
     {
-        cout << "That's not real cards index. Please try again!" << endl;
+        cout << "That's not real card index. Please try again!" << endl;
         cin >> pTwoChosenIndex;
         inputCheckpTwo();
     }
@@ -150,9 +214,11 @@ int inputChosenCard()
     int playerChosenCard;
     cout << "Select a card";
     cin >> playerChosenCard;
-    
+
     return playerChosenCard;
 }
+
+//make checks what cards can be placed in the first row
 int inputChosenIndex()
 {
     int playerChosenIndex;
@@ -162,55 +228,19 @@ int inputChosenIndex()
     return playerChosenIndex;
 }
 
-
-/*void buildPyramindPOne()
-{
-    for (int i = 0; i < 5; i++)
-    {
-        for (int j = 0; j < 5; j++)
-        {
-            if (pOnePyramid[i][j] == "")
-            {
-                continue;
-            }
-            else {
-                cout << pOnePyramid[i][j] << " ";
-            }
-        }
-        cout << endl;
-    }
-}
-
-void outputBasecards()
+/*void outputBasecards()
 {
     for (int i = 0; i < 6; i++)
     {
         cout << baseCards[i] << " ";
     }
-}
-
-void buildPyramindPTwo()
-{
-    for (int i = 0; i < 5; i++)
-    {
-        for (int j = 0; j < 5; j++)
-        {
-            if (pTwoPyramid[i][j] == "")
-            {
-                continue;
-            }
-            else {
-                cout << pTwoPyramid[i][j] << " ";
-            }
-        }
-        cout << endl;
-    }
 }*/
+
 
 int main()
 {
     fillingCardArrays();
     RandomizingPlayerCardsInput();
     shuffle_array();
+    drawPyramids();
 }
-
