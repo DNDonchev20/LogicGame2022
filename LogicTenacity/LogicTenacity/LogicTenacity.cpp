@@ -21,7 +21,7 @@ char notCards[2];
 bool playerTurn = true;
 
 
-//choise to place or to discard a card
+//choise to place or to delete a card
 string choise;
 
 //players  
@@ -33,6 +33,35 @@ string pOnePyramid[15], pTwoPyramid[15];
 
 bool pOneWins = false, pTwoWins = false;
 
+//Play have to choose what card to play
+int inputChosenCard(int& playerChosenCard)
+{
+    cout << "Select a card: ";
+    cin >> playerChosenCard;
+
+    return playerChosenCard;
+}
+
+//Player have to choose where to place the chosen card
+int inputChosenIndex(int& playerChosenIndex)
+{
+    cout << "Select an index";
+    cin >> playerChosenIndex;
+
+    return playerChosenIndex;
+}
+
+void deleteCard(int& playerChosenCard)
+{
+    pOne[playerChosenCard].erase(0);
+    if (pOne[playerChosenCard] == "")
+    {
+        for (int i = playerChosenCard; i < 5; i++)
+        {
+            pOne[playerChosenCard] = pOne[playerChosenCard + 1];
+        }
+    }
+}
 
 void fillingCardArrays()
 {
@@ -57,10 +86,10 @@ void fillingCardArrays()
     fill(begin(pTwoPyramid), end(pTwoPyramid), "-");
 }
 
-void RandomizingPlayerCardsInput()
+void RandomizingPlayerCardsOutput()
 {
     srand(time(0));
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 4; i++)
     {
         //gets random index from array
         int randomIndex = rand() % 48;
@@ -74,10 +103,9 @@ void RandomizingPlayerCardsInput()
             //set whitespace element for future checks
             cards[randomIndex].erase();
         }
-
     }
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 4; i++)
     {
         //gets random index from array
         int randomIndex = rand() % 48;
@@ -91,10 +119,38 @@ void RandomizingPlayerCardsInput()
             //set whitespace element for future checks
             cards[randomIndex].erase();
         }
-
     }
 }
 
+void pOneFillFifthIndex()
+{
+    srand(time(0));
+
+    //gets random index from array
+    int randomIndex = rand() % 48;
+    
+    if (cards[randomIndex] != "")
+    {
+        pOne[4] = cards[randomIndex];
+        cards[randomIndex].erase(0);
+        cout << "Drawed card: " << pOne[4];
+    }
+    else {
+        pOneFillFifthIndex();
+    }
+}
+
+void pTwoFillFifthIndex()
+{
+    srand(time(0));
+
+    //gets random index from array
+    int randomIndex = rand() % 48;
+    pTwo[4] = cards[randomIndex];
+    cout << "Drawed card: " << pTwo[4];
+}
+
+//Builing player one starting pyramid
 void buildPyramindspOne()
 {
     int counter = 0;
@@ -114,10 +170,9 @@ void buildPyramindspOne()
         cout << setw(2);
         cout << endl;
     }
-
-    
 }
 
+//Builing player two starting pyramid
 void buildPyramindspTwo()
 {
     int counter = 0;
@@ -160,15 +215,16 @@ void shuffle_array()
 void outputPlyerCards()
 {
     cout << "Player one cards are: ";
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 4; i++)
     {
         cout << i + 1 << ". " << pOne[i] << " ";
     }
+    
 
     cout << endl;
 
     cout << "Player two cards are: ";
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 4; i++)
     {
         cout << i + 1 << ". " << pTwo[i] << " ";
     }
@@ -220,7 +276,12 @@ void choiseF()
     }
     else if (choise == "Delete" || choise == "delete")
     {
-
+        inputChosenCard(pOneChosenCard);
+        deleteCard(pOneChosenCard);
+        system("pause");
+        system("cls");
+        allRendering();
+        choiseF();
     }
     else
     {
@@ -254,26 +315,6 @@ void inputCheckpTwo()
     }
 }
 
-//make checks what cards can be placed in the first row
-int inputChosenCard()
-{
-    int playerChosenCard;
-    cout << "Select a card";
-    cin >> playerChosenCard;
-
-    return playerChosenCard;
-}
-
-//make checks what cards can be placed in the first row
-int inputChosenIndex()
-{
-    int playerChosenIndex;
-    cout << "Select an index";
-    cin >> playerChosenIndex;
-
-    return playerChosenIndex;
-}
-
 /*void outputBasecards()
 {
     for (int i = 0; i < 6; i++)
@@ -285,11 +326,9 @@ int inputChosenIndex()
 
 int main()
 {
-    
     fillingCardArrays();
     shuffle_array();
-    RandomizingPlayerCardsInput();
-    
+    RandomizingPlayerCardsOutput();
     allRendering();
     choiseF();
 }
