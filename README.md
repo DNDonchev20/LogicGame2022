@@ -1,78 +1,45 @@
+<h1 align="center">Logic game Project</h1>
+<h6 align="center">LogicTenacity</h6>
 <p align="center">
-  <a href="" rel="noopener">
- <img width=200px height=200px src="images/Logo.png" alt="Logo"></a>
+<img src="https://cdn.discordapp.com/attachments/967005656261480473/969991058161283072/LogicTenacity.3-removebg-preview.png" width="500px">
 </p>
 
-<h3 align="center">JabaScripters</h3>
 
-<p align="center"> 🤖 Website about the Second World War.
-    <br> 
-</p>
+## 🖥 Team Members:
+* **Daniel Mihalev** - *Scrum trainer* 
+* **Deivid Donchev** - *Back-end developer* 
+* **Yusmen Osman** - *Back-end developer* 
+* **Trani Tranev** - *QA Engineer* 
 
-## 📝 Table of Contents
-+ [Our team](#teamInfo)
-+ [Used technologies and tools](#languagesAndtools)
-+ [Documentation and presentation](#docAndPres)
-+ [About the website](#about)
-+ [Installation](#install)
-+ [Useful links](#acknowledgement)
-+ [Sources](#sources)
 
-## <p id = "teamInfo">Team <a name = "team">JabaScripters</a> </p>
-1. Scrum Trainer - [Deivid Donchev](https://github.com/DNDonchev20)
-2. Front-end developer - [Mario Zlatev](https://github.com/MIZlatev20)
-3. Back-end developer - [Nikolay Despotov](https://github.com/NVDespotov20)
-4. Designer - [Georgi Zhekov](https://github.com/GTZhekov20)
-
-## <p id="languagesAndtools">🚀 Languages and tools</p>
+## 🚀 Languages and tools:
 
 <p align="left"> 
-    <img src="https://img.icons8.com/color/48/000000/html-5.png"/> 
-    <img src="https://img.icons8.com/color/48/000000/css3.png"/> 
-    <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png"/>
-    <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-2038874-1720087.png" width=52px height=52px>
-    <img src="https://cdn.iconscout.com/icon/free/png-256/sass-226054.png" width=52px height=52px>
-###
-[Documentation and presentation] (https://codingburgas-my.sharepoint.com/:f:/g/personal/tstranev20_codingburgas_bg/EvGfyTAxSpJMulwWWIAur1ABmz1QIyV8_Wdg8B6KwerNDA?e=2CHNPl)
-  ---
+    <img src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png"/>
+    <img src="https://www.sfml-dev.org/download/goodies/sfml-icon-small.png" width="48px" height="48px"/>
+    <img src="https://img.icons8.com/fluency/48/000000/visual-studio-2019.png"/>
+    <img src="https://img.icons8.com/color/48/000000/figma--v1.png"/>
   
-You can find them on the following links:
-<br>
-<img src="https://media.discordapp.net/attachments/815253581149896790/818133539903111188/Microsoft_Word_logo.png" width="20"> Word - Documentation
-<br>
-<img src="https://media.discordapp.net/attachments/815253581149896790/818136011359518780/kisspng-microsoft-powerpoint-computer-software-microsoft-o-5b3b3927c75c49.3318087715306079118166-rem.png" width="20"> PowerPoint - Presentation
-<br>
+  
+  
+## 📄 Documents
+      
+  <img src="https://user-images.githubusercontent.com/75934947/166557467-b0db5298-0c01-4201-aad8-69f17a7104dd.png" width="20px" height="20px"/> [Word Documentation](https://codingburgas-my.sharepoint.com/:w:/r/personal/tstranev20_codingburgas_bg/_layouts/15/Doc.aspx?sourcedoc=%7B42C6EF32-E071-4C28-BCC4-0EE3236662CC%7D&file=LogicTenacity-Documentation.docx&action=default&mobileredirect=true)
+  
+  <img src="https://user-images.githubusercontent.com/75934947/166558395-c1113581-36d0-4c2d-9c51-e1c4f7a32eb7.png" width="20px" height="20px"/> [PowerPoint Presentation](https://codingburgas-my.sharepoint.com/:p:/r/personal/tstranev20_codingburgas_bg/_layouts/15/Doc.aspx?sourcedoc=%7B9FE42C7D-ADE5-4EE5-9253-2C151FD62EDA%7D&file=LogicTenacity-Presentation.pptx&action=edit&mobileredirect=true)
+  
+  
+    
+## 📋 Description:
+    
 
-## <p id = "about">🧐 About <a name = "about">our website</a></p>
-А website that has information on the most common things before, during and after World War II
+*This repo is all about our Logic game Project. Our task was to create a game in C++ called "Boole0".*
+  
 
-## <p id = "license">License</p>
-This project is licensed under the MIT license. See [License](LICENSE.txt) for more
-
-## <p id = "install">⚙ Installation</p>
+## ⚙ Installation
 ```
-You can download our project by clicking the green "Code" button.
+You can download our project by using the green "Code" button.
 
 Or by pasting the following code in your CMD:
-git clone https://github.com/DNDonchev20/History-Geography-Project.git
+https://github.com/DNDonchev20/logicGame2022.git
 ```
-  
-## <p id = "acknowledgement">🎉 Useful links<a name = "acknowledgement"></a></p>
-
-  <a href="https://png2svg.com/">PNG to SVG converter</a>
-  <br>
-  <a href="https://historicalmapchart.net/europe-world-war-2.html">Create custom WWII maps</a>
-
-  ## <p id = "sources">📰 Sources<a name = "sources"></a></p>
-
-  <ul>
-    <a href="https://en.wikipedia.org/wiki/Gallery_of_sovereign_state_flags"><li>Flags</li></a>
-    <a href="https://www.wikipedia.org/"><li>Information</li></a>
-    <a href="https://regexr.com"><li>Patterns</li></a>
-    <a href="https://developer.mozilla.org/en-US/"><li>Resources we learned from</li></a>
-  </ul>
-  
-
-  ---
-
-# 📚 Use it to learn more easily about the Second World War
