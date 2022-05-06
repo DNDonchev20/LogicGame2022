@@ -18,78 +18,169 @@ int pTwoChosenCard = 0;
 
 //stage 3 and 4
 char notCards[2];
-bool playerTurn = true;
 
+//this bools decide who has the turn
+bool playerOnTurn = true;
 
 //choise to place or to delete a card
 string choise;
 
 //players  
 //gamemode 1
-string pOne[5], pTwo[5];
+string pOne[6], pTwo[6];
 
 string pOnePyramid[15], pTwoPyramid[15];
 
 
 bool pOneWins = false, pTwoWins = false;
 
-//Play have to choose what card to play
-int inputChosenCard(int& playerChosenCard)
-{
-    cout << "Select a card: ";
-    cin >> playerChosenCard;
-
-    return playerChosenCard;
-}
-
 //Player have to choose where to place the chosen card
-int inputChosenIndex(int& playerChosenIndex)
+void inputChosenIndex(int& playerChosenIndex)
 {
     cout << "Select an index";
     cin >> playerChosenIndex;
+}
 
-    return playerChosenIndex;
+//Play have to choose what card to play
+void inputChosenCard(int& playerChosenCard)
+{
+    cout << "Select a card: ";
+    cin >> playerChosenCard;
 }
 
 void deleteCard(int& playerChosenCard)
 {
-    pOne[playerChosenCard].erase(0);
-    if (pOne[playerChosenCard] == "")
+    pOne[playerChosenCard - 1].erase(0);
+    swap(pOne[playerChosenCard - 1], pOne[4]);
+}
+
+void deleteCardpTwo(int& playerChosenCard)
+{
+    pTwo[playerChosenCard - 1].erase(0);
+    swap(pTwo[playerChosenCard - 1], pTwo[4]);
+}
+
+void fillFifthIndex()
+{
+    for (int i = 0; i < 48; i++)
     {
-        for (int i = playerChosenCard; i < 5; i++)
+        if (cards[i] != "")
         {
-            pOne[playerChosenCard] = pOne[playerChosenCard + 1];
+            pOne[4] = cards[i] ;
+            cards[i].erase(0);
+            break;
         }
     }
 }
 
+void fillFithIndexpTwo()
+{
+    for (int i = 0; i < 48; i++)
+    {
+        if (cards[i] != "")
+        {
+            pTwo[4] = cards[i];
+            cards[i].erase(0);
+            break;
+        }
+    }
+}
+
+/*void addCard(int& playerChoesnCard)
+{
+    cout << "What card do you want to place?";
+    pOneChosenCard = inputChosenCard();
+    cout << "Where do you want to place the card?";
+    pOneChosenIndex = inputChosenIndex();
+    pOnePyramid[pOneChosenIndex] = pOne[pOneChosenCard];
+    
+    
+}*/
+
+
 void fillingCardArrays()
 {
-    //filling the arrays
-    //cards array
-    fill(begin(cards), begin(cards) + 8, "1or");
-    fill(begin(cards) + 8, begin(cards) + 16, "1and");
-    fill(begin(cards) + 16, begin(cards) + 24, "1xor");
-    fill(begin(cards) + 24, begin(cards) + 32, "0or");
-    fill(begin(cards) + 32, begin(cards) + 40, "0and");
-    fill(begin(cards) + 40, begin(cards) + 48, "0xor");
+    for (int i = 0; i < 48; i++)
+    {
+        if (i < 8)
+        {
+            cards[i] = "1or";
+        }
+        else if (i < 16)
+        {
+            cards[i] = "1and";
+        }
+        else if (i < 24)
+        {
+            cards[i] = "1xor";
+        }
+        else if (i < 32)
+        {
+            cards[i] = "0or";
+        }
+        else if (i < 40)
+        {
+            cards[i] = "0and";
+        }
+        else if (i < 48)
+        {
+            cards[i] = "0xor";
+        }
+    }
 
-    //baseCards arrays
-    fill(begin(baseCardspOne), begin(baseCardspOne) + 3, "1");
-    fill(begin(baseCardspOne) + 3, begin(baseCardspOne) + 6, "0");
+    for (int i = 0; i < 6; i++)
+    {
+        if (i < 3)
+        {
+            baseCardspOne[i] = "1";
+        }
+        else
+        {
+            baseCardspOne[i] = "0";
+        }
+    }
 
-    //notCards array
-    fill(begin(notCards), begin(notCards) + 2, '!');
+    for (int i = 0; i < 15; i++)
+    {
+        pOnePyramid[i] = "-";
+    }
 
-    //Pyramid arrays
-    fill(begin(pOnePyramid), end(pOnePyramid), "-");
-    fill(begin(pTwoPyramid), end(pTwoPyramid), "-");
+    for (int i = 0; i < 15; i++)
+    {
+        pTwoPyramid[i] = "-";
+    }
+}
+
+// Shuffle array
+void shuffle_array()
+{
+    srand(time(0));
+    for (int i = 0; i < 6; i++)
+    {
+        int random = rand() % 6;
+        string temporary = baseCardspOne[i];
+        baseCardspOne[i] = baseCardspOne[random];
+        baseCardspOne[random] = temporary;
+    }
+
+
+    for (int i = 0; i < 6; i++)
+    {
+        if (baseCardspOne[i] == "1")
+        {
+            baseCardspTwo[i] = "0";
+        }
+        else if (baseCardspOne[i] == "0")
+        {
+            baseCardspTwo[i] = "1";
+        }
+    }
 }
 
 void RandomizingPlayerCardsOutput()
 {
     srand(time(0));
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 5; i++)
     {
         //gets random index from array
         int randomIndex = rand() % 48;
@@ -105,7 +196,7 @@ void RandomizingPlayerCardsOutput()
         }
     }
 
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 5; i++)
     {
         //gets random index from array
         int randomIndex = rand() % 48;
@@ -120,34 +211,6 @@ void RandomizingPlayerCardsOutput()
             cards[randomIndex].erase();
         }
     }
-}
-
-void pOneFillFifthIndex()
-{
-    srand(time(0));
-
-    //gets random index from array
-    int randomIndex = rand() % 48;
-    
-    if (cards[randomIndex] != "")
-    {
-        pOne[4] = cards[randomIndex];
-        cards[randomIndex].erase(0);
-        cout << "Drawed card: " << pOne[4];
-    }
-    else {
-        pOneFillFifthIndex();
-    }
-}
-
-void pTwoFillFifthIndex()
-{
-    srand(time(0));
-
-    //gets random index from array
-    int randomIndex = rand() % 48;
-    pTwo[4] = cards[randomIndex];
-    cout << "Drawed card: " << pTwo[4];
 }
 
 //Builing player one starting pyramid
@@ -194,37 +257,18 @@ void buildPyramindspTwo()
     }
 }
 
-// Shuffle array
-void shuffle_array()
-{
-    random_shuffle(begin(baseCardspOne), end(baseCardspOne));
-    
-    for (int i = 0; i < 6; i++)
-    {
-        if (baseCardspOne[i] == "1")
-        {
-            baseCardspTwo[i] = "0";
-        }
-        else if (baseCardspOne[i] == "0")
-        {
-            baseCardspTwo[i] = "1";
-        }
-    }
-}
-
 void outputPlyerCards()
 {
     cout << "Player one cards are: ";
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 5; i++)
     {
         cout << i + 1 << ". " << pOne[i] << " ";
     }
-    
-
+ 
     cout << endl;
 
     cout << "Player two cards are: ";
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 5; i++)
     {
         cout << i + 1 << ". " << pTwo[i] << " ";
     }
@@ -267,68 +311,106 @@ void allRendering()
 
 void choiseF()
 {
-    cout << "Do you want to play or delete a card?" << endl;
-    cin >> choise;
+    //while
+    if (playerOnTurn == true)
+    {
+        cout << endl;
+        cout << "Player one turn: " << endl;
+        cout << "Do you want to place or delete a card?(write delete or place): ";
+    
+        cin >> choise;
 
-    if (choise == "Place" || choise == "place")
-    {
-        //placeCard()
-    }
-    else if (choise == "Delete" || choise == "delete")
-    {
-        inputChosenCard(pOneChosenCard);
-        deleteCard(pOneChosenCard);
-        system("pause");
-        system("cls");
-        allRendering();
-        choiseF();
-    }
-    else
-    {
-        cout << "Wrong input plese try again";
-        system("pause");
-        system("cls");
-        allRendering();
-        choiseF();
-    }
+        if (choise == "Place" || choise == "place")
+        {
+            //placeCard()
+            /*addCards();*/
+        }
+        else if (choise == "Delete" || choise == "delete")
+        {
+            inputChosenCard(pOneChosenCard);
+            if (pOneChosenCard < 1 || pOneChosenCard > 5)
+            {
+                cout << "Wrong card index. Please try again with index from 1 to 5" << endl;
+                system("pause");
+                system("cls");
+                allRendering();
+                choiseF();
+            }
+            else {
+                deleteCard(pOneChosenCard);
+                system("pause");
+                system("cls");
+                fillFithIndexpTwo();
+                allRendering();
+                playerOnTurn = false;
 
-    cout << endl;
+                choiseF();
+            }       
+        }
+        else
+        {
+            cout << "Wrong input plese try again" << endl;
+            system("pause");
+            system("cls");
+            allRendering();
+            choiseF();
+        }
+        cout << endl; 
+    }
+    else {
+        cout << "Player two turn" << endl;
+        cout << "Do you want to place or delete a card?(write delete or place): ";
+        cin >> choise;
+
+        if (choise == "Place" || choise == "place")
+        {
+            //placeCard()
+            /*addCards();*/
+        }
+        else if (choise == "Delete" || choise == "delete")
+        {
+            inputChosenCard(pTwoChosenCard);
+            if (pTwoChosenCard < 1 || pTwoChosenCard > 5)
+            {
+                cout << "Wrong card index. Please try again with index from 1 to 5" << endl;
+                system("pause");
+                system("cls");
+                allRendering();
+                choiseF();
+            }
+            else {
+                deleteCardpTwo(pTwoChosenCard);
+                system("pause");
+                system("cls");
+                
+                playerOnTurn = true;
+
+                fillFifthIndex();
+                allRendering();
+                choiseF();
+            }
+        }
+        else
+        {
+            cout << "Wrong input. Please try again!" << endl;
+            system("pause");
+            system("cls");
+            allRendering();
+            choiseF();
+        }
+    }
 }
 
-void inputCheckpOne()
-{
-    if (pOneChosenIndex < 0 || pOneChosenIndex > 3)
-    {
-        cout << "That's not real card index. Please try again!" << endl;
-        cin >> pOneChosenIndex;
-        inputCheckpOne();
-    }
-}
-
-void inputCheckpTwo()
-{
-    if (pTwoChosenIndex < 0 || pTwoChosenIndex > 3)
-    {
-        cout << "That's not real card index. Please try again!" << endl;
-        cin >> pTwoChosenIndex;
-        inputCheckpTwo();
-    }
-}
-
-/*void outputBasecards()
-{
-    for (int i = 0; i < 6; i++)
-    {
-        cout << baseCards[i] << " ";
-    }
-}*/
-
-
-int main()
+void playerTurn()
 {
     fillingCardArrays();
     shuffle_array();
     RandomizingPlayerCardsOutput();
     allRendering();
     choiseF();
+}
+
+int main()
+{
+    playerTurn();
 }
