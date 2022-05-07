@@ -128,6 +128,15 @@ void fillingCardArrays()
         }
     }
 
+    //shuffle the deck
+    for (int i = 0; i < 48; i++)
+    {
+        int random = rand() % 48;
+        string temporary = cards[i];
+        cards[i] = cards[random];
+        cards[random] = temporary;
+    }
+
     for (int i = 0; i < 6; i++)
     {
         if (i < 3)
@@ -311,6 +320,7 @@ void allRendering()
 
 void choiseF()
 {
+    static bool firstTimepTwo = true;
     //while
     if (playerOnTurn == true)
     {
@@ -319,6 +329,8 @@ void choiseF()
         cout << "Do you want to place or delete a card?(write delete or place): ";
     
         cin >> choise;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
         if (choise == "Place" || choise == "place")
         {
@@ -340,7 +352,13 @@ void choiseF()
                 deleteCard(pOneChosenCard);
                 system("pause");
                 system("cls");
-                fillFithIndexpTwo();
+
+                if (firstTimepTwo == false)
+                {
+                    fillFithIndexpTwo();
+                    
+                }
+                firstTimepTwo = false;
                 allRendering();
                 playerOnTurn = false;
 
@@ -349,7 +367,7 @@ void choiseF()
         }
         else
         {
-            cout << "Wrong input plese try again" << endl;
+            cout << "Wrong input. Please try again!" << endl;
             system("pause");
             system("cls");
             allRendering();
@@ -358,9 +376,13 @@ void choiseF()
         cout << endl; 
     }
     else {
-        cout << "Player two turn" << endl;
+        cout << "Player two turn:" << endl;
         cout << "Do you want to place or delete a card?(write delete or place): ";
+
         cin >> choise;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
 
         if (choise == "Place" || choise == "place")
         {
@@ -372,7 +394,7 @@ void choiseF()
             inputChosenCard(pTwoChosenCard);
             if (pTwoChosenCard < 1 || pTwoChosenCard > 5)
             {
-                cout << "Wrong card index. Please try again with index from 1 to 5" << endl;
+                cout << "Wrong card index. Please try again with index from 1 to 5!" << endl;
                 system("pause");
                 system("cls");
                 allRendering();
@@ -401,7 +423,7 @@ void choiseF()
     }
 }
 
-void playerTurn()
+void setup()
 {
     fillingCardArrays();
     shuffle_array();
@@ -412,5 +434,5 @@ void playerTurn()
 
 int main()
 {
-    playerTurn();
+    setup();
 }
