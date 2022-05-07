@@ -29,7 +29,7 @@ string choise;
 //gamemode 1
 string pOne[6], pTwo[6];
 
-string pOnePyramid[15], pTwoPyramid[15];
+string pOnePyramid[21], pTwoPyramid[21];
 
 
 bool pOneWins = false, pTwoWins = false;
@@ -37,7 +37,7 @@ bool pOneWins = false, pTwoWins = false;
 //Player have to choose where to place the chosen card
 void inputChosenIndex(int& playerChosenIndex)
 {
-    cout << "Select an index";
+    cout << "Select an index: ";
     cin >> playerChosenIndex;
 }
 
@@ -58,6 +58,391 @@ void deleteCardpTwo(int& playerChosenCard)
 {
     pTwo[playerChosenCard - 1].erase(0);
     swap(pTwo[playerChosenCard - 1], pTwo[4]);
+}
+
+bool check(int playerChosenCard, int checkCard1, int checkCard2)
+{
+
+    playerChosenCard--;
+    if (pOne[playerChosenCard] == "1or")
+    {
+        if (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "0")
+        {
+            return false;
+        }
+        else if ((pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "0") || (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "1"))
+        {
+            return true;
+        }
+        else if (pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "1")
+        {
+            return true;
+        }
+    }
+    else if (pOne[playerChosenCard] == "1and")
+    {
+        if (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "0")
+        {
+            return false;
+        }
+        else if ((pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "0") || (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "1"))
+        {
+            return false;
+        }
+        else if (pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "1")
+        {
+            return true;
+        }
+    }
+    else if (pOne[playerChosenCard] == "1xor")
+    {
+        if (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "0")
+        {
+            return false;
+        }
+        else if ((pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "0") || (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "1"))
+        {
+            return true;
+        }
+        else if (pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "1")
+        {
+            return false;
+        }
+    }
+    else if (pOne[playerChosenCard] == "0or")
+    {
+        if (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "0")
+        {
+            return true;
+        }
+        else if ((pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "0") || (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "1"))
+        {
+            return false;
+        }
+        else if (pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "1")
+        {
+            return false;
+        }
+    }
+    else if (pOne[playerChosenCard] == "0and")
+    {
+        if (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "0")
+        {
+            return true;
+        }
+        else if ((pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "0") || (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "1"))
+        {
+            return true;
+        }
+        else if (pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "1")
+        {
+            return false;
+        }
+    }
+    else if (pOne[playerChosenCard] == "0xor")
+    {
+        if (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "0")
+        {
+            return true;
+        }
+        else if ((pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "0") || (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "1"))
+        {
+            return false;
+        }
+        else if (pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "1")
+        {
+            return true;
+        }
+    }
+
+
+}
+bool checkpTwo(int playerChosenCard, int checkCard1, int checkCard2)
+{
+
+    playerChosenCard--;
+    if (pTwo[playerChosenCard] == "1or")
+    {
+        if (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "0")
+        {
+            return false;
+        }
+        else if ((pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "0") || (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "1"))
+        {
+            return true;
+        }
+        else if (pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "1")
+        {
+            return true;
+        }
+    }
+    else if (pTwo[playerChosenCard] == "1and")
+    {
+        if (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "0")
+        {
+            return false;
+        }
+        else if ((pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "0") || (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "1"))
+        {
+            return false;
+        }
+        else if (pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "1")
+        {
+            return true;
+        }
+    }
+    else if (pTwo[playerChosenCard] == "1xor")
+    {
+        if (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "0")
+        {
+            return false;
+        }
+        else if ((pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "0") || (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "1"))
+        {
+            return true;
+        }
+        else if (pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "1")
+        {
+            return false;
+        }
+    }
+    else if (pTwo[playerChosenCard] == "0or")
+    {
+        if (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "0")
+        {
+            return true;
+        }
+        else if ((pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "0") || (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "1"))
+        {
+            return false;
+        }
+        else if (pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "1")
+        {
+            return false;
+        }
+    }
+    else if (pTwo[playerChosenCard] == "0and")
+    {
+        if (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "0")
+        {
+            return true;
+        }
+        else if ((pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "0") || (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "1"))
+        {
+            return true;
+        }
+        else if (pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "1")
+        {
+            return false;
+        }
+    }
+    else if (pTwo[playerChosenCard] == "0xor")
+    {
+        if (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "0")
+        {
+            return true;
+        }
+        else if ((pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "0") || (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "1"))
+        {
+            return false;
+        }
+        else if (pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "1")
+        {
+            return true;
+        }
+    }
+
+
+}
+
+void addCard(int playerChosenCard, int playerChosenIndex)
+{
+
+    if (playerChosenIndex < 6)
+    {
+        if (pOnePyramid[playerChosenIndex - 1] == "-" || pOnePyramid[playerChosenIndex] == "-")
+        {
+            cout << "Wrong input";
+        }
+        else
+        {
+            if (check(playerChosenCard, playerChosenIndex - 1, playerChosenIndex))
+            {
+                pOnePyramid[playerChosenIndex + 5] = pOne[playerChosenCard - 1].substr(0, 1);
+            }
+            else
+            {
+                cout << "Wrong input";
+            }
+        }
+    }
+    else if (playerChosenIndex < 10)
+    {
+        if (pOnePyramid[playerChosenIndex] == "-" || pOnePyramid[playerChosenIndex + 1] == "-")
+        {
+            cout << "Wrong input";
+        }
+        else
+        {
+            if (check(playerChosenCard, playerChosenIndex, playerChosenIndex + 1))
+            {
+                pOnePyramid[playerChosenIndex + 5] = pOne[playerChosenCard - 1].substr(0, 1);
+            }
+            else
+            {
+                cout << "Wrong input";
+            }
+        }
+    }
+    else if (playerChosenIndex < 13)
+    {
+        if (pOnePyramid[playerChosenIndex + 1] == "-" || pOnePyramid[playerChosenIndex + 2] == "-")
+        {
+            cout << "Wrong input";
+        }
+        else
+        {
+            if (check(playerChosenCard, playerChosenIndex + 1, playerChosenIndex + 2))
+            {
+                pOnePyramid[playerChosenIndex + 5] = pOne[playerChosenCard - 1].substr(0, 1);
+            }
+            else
+            {
+                cout << "Wrong input";
+            }
+        }
+    }
+    else if (playerChosenIndex < 15)
+    {
+        if (pOnePyramid[playerChosenIndex + 2] == "-" || pOnePyramid[playerChosenIndex + 3] == "-")
+        {
+            cout << "Wrong input";
+        }
+        else
+        {
+            if (check(playerChosenCard, playerChosenIndex + 2, playerChosenIndex + 3))
+            {
+                pOnePyramid[playerChosenIndex + 5] = pOne[playerChosenCard - 1].substr(0, 1);
+            }
+            else
+            {
+                cout << "Wrong input";
+            }
+        }
+    }
+    else if (playerChosenIndex < 16)
+    {
+        if (pOnePyramid[playerChosenIndex + 3] == "-" || pOnePyramid[playerChosenIndex + 4] == "-")
+        {
+            cout << "Wrong input";
+        }
+        else
+        {
+            if (check(playerChosenCard, playerChosenIndex + 3, playerChosenIndex + 4))
+            {
+                pOnePyramid[playerChosenIndex + 5] = pOne[playerChosenCard - 1].substr(0, 1);
+            }
+            else
+            {
+                cout << "Wrong input";
+            }
+        }
+    }
+}
+
+void addCardpTwo(int playerChosenCard, int playerChosenIndex)
+{
+
+    if (playerChosenIndex < 6)
+    {
+        if (pTwoPyramid[playerChosenIndex - 1] == "-" || pTwoPyramid[playerChosenIndex] == "-")
+        {
+            cout << "Wrong input";
+        }
+        else
+        {
+            if (checkpTwo(playerChosenCard, playerChosenIndex - 1, playerChosenIndex))
+            {
+                pTwoPyramid[playerChosenIndex + 5] = pTwo[playerChosenCard - 1].substr(0, 1);
+            }
+            else
+            {
+                cout << "Wrong input";
+            }
+        }
+    }
+    else if (playerChosenIndex < 10)
+    {
+        if (pTwoPyramid[playerChosenIndex] == "-" || pTwoPyramid[playerChosenIndex + 1] == "-")
+        {
+            cout << "Wrong input";
+        }
+        else
+        {
+            if (checkpTwo(playerChosenCard, playerChosenIndex, playerChosenIndex + 1))
+            {
+                pTwoPyramid[playerChosenIndex + 5] = pTwo[playerChosenCard - 1].substr(0, 1);
+            }
+            else
+            {
+                cout << "Wrong input";
+            }
+        }
+    }
+    else if (playerChosenIndex < 13)
+    {
+        if (pTwoPyramid[playerChosenIndex + 1] == "-" || pTwoPyramid[playerChosenIndex + 2] == "-")
+        {
+            cout << "Wrong input";
+        }
+        else
+        {
+            if (checkpTwo(playerChosenCard, playerChosenIndex + 1, playerChosenIndex + 2))
+            {
+                pTwoPyramid[playerChosenIndex + 5] = pTwo[playerChosenCard - 1].substr(0, 1);
+            }
+            else
+            {
+                cout << "Wrong input";
+            }
+        }
+    }
+    else if (playerChosenIndex < 15)
+    {
+        if (pTwoPyramid[playerChosenIndex + 2] == "-" || pTwoPyramid[playerChosenIndex + 3] == "-")
+        {
+            cout << "Wrong input";
+        }
+        else
+        {
+            if (checkpTwo(playerChosenCard, playerChosenIndex + 2, playerChosenIndex + 3))
+            {
+                pTwoPyramid[playerChosenIndex + 5] = pTwo[playerChosenCard - 1].substr(0, 1);
+            }
+            else
+            {
+                cout << "Wrong input";
+            }
+        }
+    }
+    else if (playerChosenIndex < 16)
+    {
+        if (pTwoPyramid[playerChosenIndex + 3] == "-" || pTwoPyramid[playerChosenIndex + 4] == "-")
+        {
+            cout << "Wrong input";
+        }
+        else
+        {
+            if (checkpTwo(playerChosenCard, playerChosenIndex + 3, playerChosenIndex + 4))
+            {
+                pTwoPyramid[playerChosenIndex + 5] = pTwo[playerChosenCard - 1].substr(0, 1);
+            }
+            else
+            {
+                cout << "Wrong input";
+            }
+        }
+    }
 }
 
 void fillFifthIndex()
@@ -85,18 +470,6 @@ void fillFithIndexpTwo()
         }
     }
 }
-
-/*void addCard(int& playerChoesnCard)
-{
-    cout << "What card do you want to place?";
-    pOneChosenCard = inputChosenCard();
-    cout << "Where do you want to place the card?";
-    pOneChosenIndex = inputChosenIndex();
-    pOnePyramid[pOneChosenIndex] = pOne[pOneChosenCard];
-    
-    
-}*/
-
 
 void fillingCardArrays()
 {
@@ -149,19 +522,19 @@ void fillingCardArrays()
         }
     }
 
-    for (int i = 0; i < 15; i++)
+    for (int i = 6; i < 21; i++)
     {
         pOnePyramid[i] = "-";
     }
 
-    for (int i = 0; i < 15; i++)
+    for (int i = 6; i < 21; i++)
     {
         pTwoPyramid[i] = "-";
     }
 }
 
 // Shuffle array
-void shuffle_array()
+void shuffleArray()
 {
     srand(time(0));
     for (int i = 0; i < 6; i++)
@@ -225,7 +598,7 @@ void RandomizingPlayerCardsOutput()
 //Builing player one starting pyramid
 void buildPyramindspOne()
 {
-    int counter = 0;
+    int counter = 6;
     cout << setw(2);
     for (int i = 1; i < 6; i++)
     {
@@ -236,8 +609,9 @@ void buildPyramindspOne()
 
         for (int j = i; j < 6; j++)
         {
+
+            cout << pOnePyramid[counter] << " ";
             counter++;
-            cout << pOnePyramid[i] << " ";
         }
         cout << setw(2);
         cout << endl;
@@ -247,10 +621,11 @@ void buildPyramindspOne()
 //Builing player two starting pyramid
 void buildPyramindspTwo()
 {
-    int counter = 0;
+    int counter = 6;
     cout << setw(2);
     for (int i = 1; i < 6; i++)
     {
+
         for (int space = 1; space < i; space++)
         {
             cout << " ";
@@ -258,13 +633,15 @@ void buildPyramindspTwo()
 
         for (int j = i; j < 6; j++)
         {
+
+            cout << pTwoPyramid[counter] << " ";
             counter++;
-            cout << pTwoPyramid[i] << " ";
         }
         cout << setw(2);
         cout << endl;
     }
 }
+
 
 void outputPlyerCards()
 {
@@ -292,6 +669,7 @@ void drawPyramids()
     for (int i = 0; i < 6; i++)
     {
         cout << baseCardspOne[i] << " ";
+        pOnePyramid[i] = baseCardspOne[i];
     }
 
     cout << endl;
@@ -305,6 +683,7 @@ void drawPyramids()
     for (int i = 0; i < 6; i++)
     {
         cout << baseCardspTwo[i] << " ";
+        pTwoPyramid[i] = baseCardspTwo[i];
     }
 
     cout << endl;
@@ -315,9 +694,9 @@ void drawPyramids()
 void printOptionMenu()
 {
     cout << endl;
-    cout << setw(15) << setfill('-') << " " << endl;
+    cout << "---------------" << endl;
     cout << "1. Place " << endl << "2. Delete" << endl;
-    cout << setw(15) << setfill('-') << " " << endl;
+    cout << "---------------" << endl;
 }
 
 void allRendering()
@@ -344,8 +723,14 @@ void choiseF()
 
         if (choise == "1")
         {
-            //placeCard()
-            /*addCards();*/
+                inputChosenCard(pOneChosenCard);
+                inputChosenIndex(pOneChosenIndex);
+                addCard(pOneChosenCard, pOneChosenIndex);
+                system("pause");
+                system("cls");
+                allRendering();
+                playerOnTurn = false;
+                choiseF();
         }
         else if (choise == "2")
         {
@@ -357,6 +742,7 @@ void choiseF()
                 system("cls");
                 allRendering();
                 choiseF();
+
             }
             else {
                 deleteCard(pOneChosenCard);
@@ -397,8 +783,15 @@ void choiseF()
 
         if (choise == "1")
         {
-            //placeCard()
-            /*addCards();*/
+            inputChosenCard(pTwoChosenCard);
+            inputChosenIndex(pTwoChosenIndex);
+            addCardpTwo(pTwoChosenCard, pTwoChosenIndex);
+            system("pause");
+            system("cls");
+            allRendering();
+            playerOnTurn = true;
+            choiseF();
+
         }
         else if (choise == "2")
         {
@@ -437,7 +830,7 @@ void choiseF()
 void setup()
 {
     fillingCardArrays();
-    shuffle_array();
+    shuffleArray();
     RandomizingPlayerCardsOutput();
     allRendering();
     choiseF();
