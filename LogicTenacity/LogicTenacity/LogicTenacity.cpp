@@ -312,6 +312,14 @@ void drawPyramids()
     buildPyramindspTwo();
 }
 
+void printOptionMenu()
+{
+    cout << endl;
+    cout << setw(15) << setfill('-') << " " << endl;
+    cout << "1. Place " << endl << "2. Delete" << endl;
+    cout << setw(15) << setfill('-') << " " << endl;
+}
+
 void allRendering()
 {
     outputPlyerCards();
@@ -325,19 +333,21 @@ void choiseF()
     if (playerOnTurn == true)
     {
         cout << endl;
-        cout << "Player one turn: " << endl;
+        cout << "Player one turn: ";
+        printOptionMenu();
         cout << "Do you want to place or delete a card?(write delete or place): ";
     
         cin >> choise;
+
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-        if (choise == "Place" || choise == "place")
+        if (choise == "1")
         {
             //placeCard()
             /*addCards();*/
         }
-        else if (choise == "Delete" || choise == "delete")
+        else if (choise == "2")
         {
             inputChosenCard(pOneChosenCard);
             if (pOneChosenCard < 1 || pOneChosenCard > 5)
@@ -376,7 +386,8 @@ void choiseF()
         cout << endl; 
     }
     else {
-        cout << "Player two turn:" << endl;
+        cout << "Player two turn:";
+        printOptionMenu();
         cout << "Do you want to place or delete a card?(write delete or place): ";
 
         cin >> choise;
@@ -384,12 +395,12 @@ void choiseF()
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 
-        if (choise == "Place" || choise == "place")
+        if (choise == "1")
         {
             //placeCard()
             /*addCards();*/
         }
-        else if (choise == "Delete" || choise == "delete")
+        else if (choise == "2")
         {
             inputChosenCard(pTwoChosenCard);
             if (pTwoChosenCard < 1 || pTwoChosenCard > 5)
