@@ -387,6 +387,7 @@ bool addCard(int playerChosenCard, int playerChosenIndex)
 	return false;
 }
 
+//checks all inputs if they are correct
 bool addCardpTwo(int playerChosenCard, int playerChosenIndex, bool botcheck = false)
 {
 
@@ -502,6 +503,7 @@ bool addCardpTwo(int playerChosenCard, int playerChosenIndex, bool botcheck = fa
 	return false;
 }
 
+//fill the second index after is swapped
 void fillFifthIndex()
 {
 	for (int i = 0; i < 48; i++)
@@ -528,6 +530,7 @@ void fillFithIndexpTwo()
 	}
 }
 
+//filling all arrays
 void fillingCardArrays()
 {
 	for (int i = 0; i < 48; i++)
@@ -590,7 +593,7 @@ void fillingCardArrays()
 	}
 }
 
-// Shuffle array
+// Shuffling the base cards
 void shuffleArray()
 {
 	srand(time(NULL));
@@ -616,6 +619,7 @@ void shuffleArray()
 	}
 }
 
+//randomizing players cards
 void RandomizingPlayerCardsOutput()
 {
 	srand(time(NULL));
@@ -699,7 +703,7 @@ void buildPyramindspTwo()
 	}
 }
 
-
+//outputs player cards randomized
 void outputPlyerCards()
 {
 	cout << "Player one cards are: ";
@@ -718,6 +722,7 @@ void outputPlyerCards()
 	cout << endl;
 }
 
+//draws both pyramids
 void drawPyramids()
 {
 	cout << endl;
@@ -748,6 +753,7 @@ void drawPyramids()
 	buildPyramindspTwo();
 }
 
+//menu for place or delete
 void printOptionMenu()
 {
 	cout << endl;
@@ -756,6 +762,7 @@ void printOptionMenu()
 	cout << "---------------" << endl;
 }
 
+//menu for computer or player
 void printOptionMenuPCorP()
 {
 	cout << endl;
@@ -821,6 +828,7 @@ void allRendering()
 	system("PAUSE");
 }
 
+//bot funciton
 void botTurn() {
 	vector< pair<int, int>  > possible; //.first is card, .second is index
 	for (int i = 1; i <= 15; i++) // check all indexes
@@ -846,6 +854,7 @@ void botTurn() {
 
 }
 
+//checks if player has chosen the right card
 void validateTurn() {
 	if (playerOnTurn) {
 		inputChosenIndex(pOneChosenIndex);
@@ -878,7 +887,6 @@ void validateTurn() {
 void choiseF()
 {
 	static bool firstTimepTwo = true;
-	//while
 	if (playerOnTurn == true)
 	{
 		cin >> choise;
