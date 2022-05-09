@@ -814,7 +814,7 @@ void validateTurn() {
 
 			inputChosenIndex(pOneChosenIndex);
 		}
-		deleteCard(1, pOneChosenIndex);
+		deleteCard(1, pOneChosenCard);
 	}
 	else {
 		inputChosenIndex(pTwoChosenIndex);
@@ -827,7 +827,7 @@ void validateTurn() {
 
 			inputChosenIndex(pTwoChosenIndex);
 		}
-		deleteCard(2, pTwoChosenIndex);
+		deleteCard(2, pTwoChosenCard);
 	}
 }
 
