@@ -23,6 +23,9 @@ char notCards[2];
 //this bools decide who has the turn
 bool playerOnTurn = true;
 
+//this bool decide if you are playing with a bot or not
+bool isBot = true;
+
 //choise to place or to delete a card
 string choise;
 
@@ -38,6 +41,7 @@ bool pOneWins = false, pTwoWins = false;
 void allRendering();
 void printOptionMenu();
 void choiseF();
+void botTurn();
 
 //Player have to choose where to place the chosen card
 void inputChosenIndex(int& playerChosenIndex)
@@ -614,7 +618,7 @@ void shuffleArray()
 
 void RandomizingPlayerCardsOutput()
 {
-	srand(time(0));
+	srand(time(NULL));
 	for (int i = 0; i < 5; i++)
 	{
 		//gets random index from array
@@ -752,10 +756,39 @@ void printOptionMenu()
 	cout << "---------------" << endl;
 }
 
+void printOptionMenuPCorP()
+{
+	cout << endl;
+	cout << "---------------" << endl;
+	cout << "1. PC " << endl << "2. Player" << endl;
+	cout << "---------------" << endl;
+}
+
+bool PCorPMenu = true;
 void allRendering()
 {
+	int choisePCorP;
+
+	if (PCorPMenu == true)
+	{
+		cout << "What do you want to play against. Computer or other player?";
+		printOptionMenuPCorP();
+		cin >> choisePCorP;
+
+		system("cls");
+		if (choisePCorP == 1)
+		{
+			isBot = true;
+		}
+		else {
+			isBot = false;
+		}
+	}
+	PCorPMenu = false;
+
 	outputPlyerCards();
 	drawPyramids();
+
 	cout << endl;
 	while (pOnePyramid[20] == "-" && pTwoPyramid[20] == "-") {
 		if (playerOnTurn == true) {
@@ -765,10 +798,21 @@ void allRendering()
 			choiseF();
 		}
 		else {
-			cout << "Player two turn:";
-			printOptionMenu();
-			cout << "Do you want to place or delete a card?(write delete or place): ";
-			choiseF();
+			if (!isBot) {
+				cout << "Player two turn:";
+				printOptionMenu();
+				cout << "Do you want to place or delete a card?(write delete or place): ";
+				choiseF();
+			}
+			else {
+				cout << "Not it's bot turn" << endl;
+				botTurn();
+				system("pause");
+				system("cls");
+				playerOnTurn = true;
+				fillFifthIndex();
+				allRendering();
+			}
 		}
 	}
 
@@ -779,26 +823,26 @@ void allRendering()
 
 void botTurn() {
 	vector< pair<int, int>  > possible; //.first is card, .second is index
-	for (int i = 6; i <= 20; i++) // check all indexes
+	for (int i = 1; i <= 15; i++) // check all indexes
 	{
 		for (int j = 1; j <= 5; j++) { //if the card is possible
 			if (addCardpTwo(j, i, true)) {
 				possible.push_back(make_pair(j, i));
 			}
 		}
-
 	}
+
 	if (possible.size() > 0) {
 		//pick random entry from vector and play it
+		int index = rand() % possible.size();
+		addCardpTwo(possible[index].first,
+			possible[index].second);
+		deleteCard(2, possible[index].first);
 	}
 	else {
-		//delete a card
-		//delete random card, for example
+		int index = rand() % 5;
+		deleteCard(2, index);
 	}
-
-	//1. get all possible moves
-	// 
-	//2. pick a random one of them
 
 }
 
@@ -827,7 +871,7 @@ void validateTurn() {
 
 			inputChosenIndex(pTwoChosenIndex);
 		}
-		deleteCard(2, pTwoChosenCard);
+		deleteCard(2, pOneChosenCard);
 	}
 }
 
