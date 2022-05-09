@@ -593,6 +593,48 @@ void fillingCardArrays()
 	}
 }
 
+void checkIfMainDeckIsEmpty(){
+	int counter = 0;
+	for (int i = 0; i < 48; i++)
+	{
+		if (cards[i] == "")
+		{
+			counter++;
+		}
+	}
+
+	if (counter == 48)
+	{
+		for (int i = 0; i < 48; i++)
+		{
+			if (i < 8)
+			{
+				cards[i] = "1or";
+			}
+			else if (i < 16)
+			{
+				cards[i] = "1and";
+			}
+			else if (i < 24)
+			{
+				cards[i] = "1xor";
+			}
+			else if (i < 32)
+			{
+				cards[i] = "0or";
+			}
+			else if (i < 40)
+			{
+				cards[i] = "0and";
+			}
+			else if (i < 48)
+			{
+				cards[i] = "0xor";
+			}
+		}
+	}
+}
+
 // Shuffling the base cards
 void shuffleArray()
 {
@@ -774,15 +816,23 @@ void printOptionMenuPCorP()
 bool PCorPMenu = true;
 void allRendering()
 {
+	checkIfMainDeckIsEmpty();
+
 	int choisePCorP;
 
 	if (PCorPMenu == true)
 	{
+		cout << endl;
 		cout << "What do you want to play against. Computer or other player?";
+
 		printOptionMenuPCorP();
+
+		cout << "Your choice: ";
 		cin >> choisePCorP;
 
+		system("pause");
 		system("cls");
+
 		if (choisePCorP == 1)
 		{
 			isBot = true;
@@ -791,12 +841,14 @@ void allRendering()
 			isBot = false;
 		}
 	}
+
 	PCorPMenu = false;
 
 	outputPlyerCards();
 	drawPyramids();
 
 	cout << endl;
+
 	while (pOnePyramid[20] == "-" && pTwoPyramid[20] == "-") {
 		if (playerOnTurn == true) {
 			cout << "Player one turn: ";
@@ -805,7 +857,8 @@ void allRendering()
 			choiseF();
 		}
 		else {
-			if (!isBot) {
+			if (!isBot) 
+			{
 				cout << "Player two turn:";
 				printOptionMenu();
 				cout << "Do you want to place or delete a card?(write delete or place): ";
@@ -825,7 +878,7 @@ void allRendering()
 
 	cout << (pOnePyramid[20] != "-" ? "Player 1 is winner" : "Player 2 is winner");
 	cout << endl;
-	system("PAUSE");
+	system("pause");
 }
 
 //bot funciton
@@ -975,5 +1028,6 @@ void setup()
 
 int main()
 {
+	system("color 1f");
 	setup();
 }
