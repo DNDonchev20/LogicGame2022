@@ -288,6 +288,10 @@ bool checkpTwo(int playerChosenCard, int checkCard1, int checkCard2)
 
 bool addCard(int playerChosenCard, int playerChosenIndex)
 {
+	if (pOnePyramid[playerChosenIndex  + 5] != "-")
+	{
+		return false;
+	}
 	cout << "Put " << playerChosenCard << " on " << playerChosenIndex << endl;
 	if (playerChosenIndex < 6)
 	{
