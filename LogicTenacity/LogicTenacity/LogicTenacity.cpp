@@ -1048,17 +1048,7 @@ void RandomizingPlayerCardsOutput()
 	{
 		//gets random index from array
 		int randomIndex = rand() % 48;
-		if (cards[randomIndex] == "")
-		{
-			i--;
-		}
-		else if (cards[randomIndex] != "") {
-			pTwo[i] = cards[randomIndex];
-
-			//set whitespace element for future checks
-			cards[randomIndex].erase();
-		}
-	}
+		if (ca
 }
 
 //Builing player one starting pyramid
@@ -1099,12 +1089,6 @@ void buildPyramindspTwo()
 
 		for (int j = i; j < 6; j++)
 		{
-
-			cout << pTwoPyramid[counter] << " ";
-			counter++;
-		}
-		cout << setw(2);
-		cout << endl;
 	}
 }
 
@@ -1125,41 +1109,6 @@ void outputPlyerCards()
 		cout << i + 1 << ". " << pTwo[i] << " ";
 	}
 	cout << endl;
-}
-bool counterpOne()
-{
-	string input;
-	cout << "Player One do you want to counter PLayer Two's not card?";
-	cout << "1. Yes";
-	cout << "2.No";
-	cin >> input;
-
-	if (input == "1")
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-bool counterpTwo()
-{
-	string input;
-	cout << "Player Two do you want to counter PLayer One's not card?";
-	cout << "1. Yes";
-	cout << "2.No";
-	cin >> input;
-
-	if (input == "1")
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
 }
 
 //draws both pyramids
