@@ -1126,6 +1126,41 @@ void outputPlyerCards()
 	}
 	cout << endl;
 }
+bool counterpOne()
+{
+	string input;
+	cout << "Player One do you want to counter PLayer Two's not card?";
+	cout << "1. Yes";
+	cout << "2.No";
+	cin >> input;
+
+	if (input == "1")
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+bool counterpTwo()
+{
+	string input;
+	cout << "Player Two do you want to counter PLayer One's not card?";
+	cout << "1. Yes";
+	cout << "2.No";
+	cin >> input;
+
+	if (input == "1")
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
 
 //draws both pyramids
 void drawPyramids()
