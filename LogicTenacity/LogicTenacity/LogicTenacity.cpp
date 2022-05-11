@@ -1002,6 +1002,28 @@ void counterEnemyNotCard()
 		allRendering();
 	}
 }
+void notCardSwapBaseCards(int& playerChosenSwapCard)
+{
+	if (baseCardspOne[playerChosenSwapCard - 1] == "1")
+	{
+		baseCardspOne[playerChosenSwapCard - 1] = "0";
+		baseCardspTwo[playerChosenSwapCard - 1] = "1";
+	}
+	else {
+		baseCardspOne[playerChosenSwapCard - 1] = "1";
+		baseCardspTwo[playerChosenSwapCard - 1] = "0";
+	}
+
+	if (pOnePyramid[playerChosenSwapCard - 1] == "1")
+	{
+		pOnePyramid[playerChosenSwapCard - 1] = "0";
+		pTwoPyramid[playerChosenSwapCard - 1] = "1";
+	}
+	else {
+		pOnePyramid[playerChosenSwapCard - 1] = "1";
+		pTwoPyramid[playerChosenSwapCard - 1] = "0";
+	}
+}
 //randomizing players cards
 void RandomizingPlayerCardsOutput()
 {
