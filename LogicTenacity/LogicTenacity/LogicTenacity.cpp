@@ -90,6 +90,195 @@ void deleteCard(int player, int& playerChosenCard) {
 	}
 }
 
+bool checkNotCardpOne(int forCheck, int checkCard1, int checkCard2)
+{
+	if (firstRowpOne[forCheck] == "1or")
+	{
+		if (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "0")
+		{
+			return false;
+		}
+		else if ((pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "0") || (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "1"))
+		{
+			return true;
+		}
+		else if (pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "1")
+		{
+			return true;
+		}
+	}
+	else if (firstRowpOne[forCheck] == "1and")
+	{
+		if (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "0")
+		{
+			return false;
+		}
+		else if ((pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "0") || (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "1"))
+		{
+			return false;
+		}
+		else if (pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "1")
+		{
+			return true;
+		}
+	}
+	else if (firstRowpOne[forCheck] == "1xor")
+	{
+		if (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "0")
+		{
+			return false;
+		}
+		else if ((pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "0") || (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "1"))
+		{
+			return true;
+		}
+		else if (pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "1")
+		{
+			return false;
+		}
+	}
+	else if (firstRowpOne[forCheck] == "0or")
+	{
+		if (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "0")
+		{
+			return true;
+		}
+		else if ((pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "0") || (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "1"))
+		{
+			return false;
+		}
+		else if (pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "1")
+		{
+			return false;
+		}
+	}
+	else if (firstRowpOne[forCheck] == "0and")
+	{
+		if (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "0")
+		{
+			return true;
+		}
+		else if ((pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "0") || (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "1"))
+		{
+			return true;
+		}
+		else if (pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "1")
+		{
+			return false;
+		}
+	}
+	else if (firstRowpOne[forCheck] == "0xor")
+	{
+		if (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "0")
+		{
+			return true;
+		}
+		else if ((pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "0") || (pOnePyramid[checkCard1] == "0" && pOnePyramid[checkCard2] == "1"))
+		{
+			return false;
+		}
+		else if (pOnePyramid[checkCard1] == "1" && pOnePyramid[checkCard2] == "1")
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+bool checkNotCardpTwo(int forCheck, int checkCard1, int checkCard2)
+{
+	if (firstRowpTwo[forCheck] == "1or")
+	{
+		if (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "0")
+		{
+			return false;
+		}
+		else if ((pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "0") || (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "1"))
+		{
+			return true;
+		}
+		else if (pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "1")
+		{
+			return true;
+		}
+	}
+	else if (firstRowpTwo[forCheck] == "1and")
+	{
+		if (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "0")
+		{
+			return false;
+		}
+		else if ((pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "0") || (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "1"))
+		{
+			return false;
+		}
+		else if (pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "1")
+		{
+			return true;
+		}
+	}
+	else if (firstRowpTwo[forCheck] == "1xor")
+	{
+		if (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "0")
+		{
+			return false;
+		}
+		else if ((pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "0") || (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "1"))
+		{
+			return true;
+		}
+		else if (pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "1")
+		{
+			return false;
+		}
+	}
+	else if (firstRowpTwo[forCheck] == "0or")
+	{
+		if (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "0")
+		{
+			return true;
+		}
+		else if ((pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "0") || (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "1"))
+		{
+			return false;
+		}
+		else if (pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "1")
+		{
+			return false;
+		}
+	}
+	else if (firstRowpTwo[forCheck] == "0and")
+	{
+		if (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "0")
+		{
+			return true;
+		}
+		else if ((pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "0") || (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "1"))
+		{
+			return true;
+		}
+		else if (pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "1")
+		{
+			return false;
+		}
+	}
+	else if (firstRowpTwo[forCheck] == "0xor")
+	{
+		if (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "0")
+		{
+			return true;
+		}
+		else if ((pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "0") || (pTwoPyramid[checkCard1] == "0" && pTwoPyramid[checkCard2] == "1"))
+		{
+			return false;
+		}
+		else if (pTwoPyramid[checkCard1] == "1" && pTwoPyramid[checkCard2] == "1")
+		{
+			return true;
+		}
+	}
+	return false;
+
 bool check(int playerChosenCard, int checkCard1, int checkCard2)
 {
 
