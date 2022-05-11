@@ -961,7 +961,47 @@ void shuffleArray()
 		}
 	}
 }
+void printCounterEnemyNotCardMenu()
+{
+	cout << "Do you want to counter enemy not card?" << endl;
+	cout << "---------------" << endl;
+	cout << "1. Yes " << endl << "2. No";
+	cout << endl;
+	cout << "---------------" << endl;
+}
 
+void counterEnemyNotCard()
+{
+	printCounterEnemyNotCardMenu();
+	int choiceToCounterOrNot;
+	cin >> choiceToCounterOrNot;
+
+	if (choiceToCounterOrNot == 1)
+	{
+		cout << "You countered him. Now it's other player turn!" << endl;
+		system("pause");
+		system("cls");
+
+		if (playerOnTurn == true)
+		{
+			playerOnTurn = false;
+		}
+		else {
+			playerOnTurn = true;
+		}
+	}
+	else if (choiceToCounterOrNot == 0) {
+
+
+	}
+	else {
+		cout << "This turn is not possible. That's invalid turn." << endl;
+
+		system("pause");
+		system("cls");
+		allRendering();
+	}
+}
 //randomizing players cards
 void RandomizingPlayerCardsOutput()
 {
