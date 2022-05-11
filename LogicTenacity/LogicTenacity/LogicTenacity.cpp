@@ -695,6 +695,114 @@ bool addCardpTwo(int playerChosenCard, int playerChosenIndex, bool botcheck = fa
 	}
 	return false;
 }
+void isValidStatement()
+{
+	if (pOnePyramid[6] == "-")
+	{
+		pOnePyramid[11] = "-";
+		pOnePyramid[15] = "-";
+
+		pOnePyramid[18] = "-";
+	}
+
+	if (pOnePyramid[7] == "-")
+	{
+		pOnePyramid[11] = "-";
+		pOnePyramid[12] = "-";
+
+		pOnePyramid[15] = "-";
+		pOnePyramid[16] = "-";
+
+		pOnePyramid[18] = "-";
+		pOnePyramid[19] = "-";
+	}
+
+	if (pOnePyramid[8] == "-")
+	{
+		pOnePyramid[12] = "-";
+		pOnePyramid[13] = "-";
+
+		pOnePyramid[15] = "-";
+		pOnePyramid[16] = "-";
+		pOnePyramid[17] = "-";
+
+		pOnePyramid[18] = "-";
+		pOnePyramid[19] = "-";
+	}
+
+	if (pOnePyramid[9] == "-")
+	{
+		pOnePyramid[13] = "-";
+		pOnePyramid[14] = "-";
+
+		pOnePyramid[16] = "-";
+		pOnePyramid[17] = "-";
+
+		pOnePyramid[18] = "-";
+		pOnePyramid[19] = "-";
+	}
+
+	if (pOnePyramid[10] == "-")
+	{
+		pOnePyramid[14] = "-";
+		pOnePyramid[17] = "-";
+
+		pOnePyramid[19] = "-";
+	}
+
+	if (pTwoPyramid[6] == "-")
+	{
+		pTwoPyramid[11] = "-";
+		pTwoPyramid[15] = "-";
+
+		pTwoPyramid[18] = "-";
+	}
+
+	if (pTwoPyramid[7] == "-")
+	{
+		pTwoPyramid[11] = "-";
+		pOnePyramid[12] = "-";
+
+		pTwoPyramid[15] = "-";
+		pOnePyramid[16] = "-";
+
+		pTwoPyramid[18] = "-";
+		pTwoPyramid[19] = "-";
+	}
+
+	if (pTwoPyramid[8] == "-")
+	{
+		pTwoPyramid[12] = "-";
+		pTwoPyramid[13] = "-";
+
+		pTwoPyramid[15] = "-";
+		pTwoPyramid[16] = "-";
+		pTwoPyramid[17] = "-";
+
+		pTwoPyramid[18] = "-";
+		pTwoPyramid[19] = "-";
+	}
+
+	if (pTwoPyramid[9] == "-")
+	{
+		pTwoPyramid[13] = "-";
+		pTwoPyramid[14] = "-";
+
+		pTwoPyramid[16] = "-";
+		pTwoPyramid[17] = "-";
+
+		pTwoPyramid[18] = "-";
+		pTwoPyramid[19] = "-";
+	}
+
+	if (pTwoPyramid[10] == "-")
+	{
+		pTwoPyramid[14] = "-";
+		pTwoPyramid[17] = "-";
+
+		pTwoPyramid[19] = "-";
+	}
+}
 
 //fill the second index after is swapped
 void fillFifthIndex()
