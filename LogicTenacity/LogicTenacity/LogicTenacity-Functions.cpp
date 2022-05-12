@@ -1384,7 +1384,7 @@ void allRendering()
 				choiseF();
 			}
 			else {
-				cout << "Not it's bot turn" << endl;
+				cout << "Now it's bot turn" << endl;
 				botTurn();
 				system("pause");
 				system("cls");
@@ -1400,7 +1400,21 @@ void allRendering()
 	system("pause");
 }
 
-//bot funciton
+//bot funcitons
+bool botTurnNotCard()
+{
+	srand(time(0));
+	int index = rand() & 3;
+	if (index == 1)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+
+}
 void botTurn() {
 	srand(time(NULL));
 	vector< pair<int, int>  > possible; //.first is card, .second is index
@@ -1420,56 +1434,9 @@ void botTurn() {
 			possible[index].second);
 		deleteCard(2, possible[index].first);
 	}
-	else {
-		int choiceAI = rand() % 2;
-		if (choiceAI == 1 && checkNotCardpTwo > 0)
-		{
-			int choiceAINotCard = rand() % 4;
-			if (choiceAINotCard == 1 || choiceAINotCard == 2 || choiceAINotCard == 3)
-			{
-				notCardspTwo--;
-				system("pause");
-				system("cls");
-
-				allRendering();
-				playerOnTurn = true;
-			}
-			else {
-				int flag = 0;
-				int choiceAISwapCard = rand() % 6;
-				notCardspTwo--;
-				if (counterpOne())
-				{
-					flag = 1;
-					notCardspOne--;
-					system("pause");
-					system("cls");
-
-					allRendering();
-				}
-				notCardSwapBaseCards(choiceAISwapCard);
-				playNotCardpOne(choiceAISwapCard);
-				playNotCardpTwo(choiceAISwapCard);
-				isValidStatement();
-
-				system("pause");
-				system("cls");
-				allRendering();
-				if (flag == 0)
-				{
-					playerOnTurn = true;
-				}
-				else
-				{
-					playerOnTurn = false;
-				}
-			}
-		}
-		else {
-			int index = rand() % 5;
-			deleteCard(2, index);
-		}
-	}
+	
+		
+	
 
 }
 
@@ -1564,37 +1531,77 @@ void choiseF()
 				allRendering();
 			}
 			notCardspOne--;
-			if (counterpTwo())
+			if (!isBot)
 			{
-				flag = 1;
-				notCardspTwo--;
-				system("pause");
-				system("cls");
-
-				allRendering();
-			}
-			else
-			{
-				notCardSwapBaseCards(pOneChosenIndex);
-				playNotCardpOne(pOneChosenIndex);
-				playNotCardpTwo(pOneChosenIndex);
-				isValidStatement();
-
-				system("pause");
-				system("cls");
-				if (flag == 0)
+				if (counterpTwo())
 				{
-					playerOnTurn = false;
+					flag = 1;
+					notCardspTwo--;
+					system("pause");
+					system("cls");
+
+					allRendering();
 				}
 				else
 				{
-					playerOnTurn = true;
+					notCardSwapBaseCards(pOneChosenIndex);
+					playNotCardpOne(pOneChosenIndex);
+					playNotCardpTwo(pOneChosenIndex);
+					isValidStatement();
+
+					system("pause");
+					system("cls");
+					if (flag == 0)
+					{
+						playerOnTurn = false;
+					}
+					else
+					{
+						playerOnTurn = true;
+					}
+
+
+					allRendering();
 				}
 
-
-				allRendering();
 			}
+			else
+			{
+				cout << "Now it's bot turn" << endl;
+				if (botTurnNotCard())
+				{
+					flag = 1;
+					notCardspTwo--;
+					system("pause");
+					system("cls");
 
+					allRendering();
+				}
+				else
+				{
+					notCardSwapBaseCards(pOneChosenIndex);
+					playNotCardpOne(pOneChosenIndex);
+					playNotCardpTwo(pOneChosenIndex);
+					isValidStatement();
+
+					system("pause");
+					system("cls");
+					if (flag == 0)
+					{
+						playerOnTurn = false;
+					}
+					else
+					{
+						playerOnTurn = true;
+					}
+
+
+					allRendering();
+				}
+				
+				
+			}
+			
 		}
 		else
 		{
