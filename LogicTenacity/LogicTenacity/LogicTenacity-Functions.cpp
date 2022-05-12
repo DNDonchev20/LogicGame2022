@@ -4,6 +4,7 @@
 #include <vector>
 #include <iomanip>
 #include <cstdlib>
+#include "LogicTenacity-Functions.h"
 using namespace std;
 
 //all cards
@@ -686,7 +687,7 @@ bool addCard(int playerChosenCard, int playerChosenIndex)
 }
 
 //checks all inputs if they are correct
-bool addCardpTwo(int playerChosenCard, int playerChosenIndex, bool botcheck = false)
+bool addCardpTwo(int playerChosenCard, int playerChosenIndex, bool botcheck)
 {
 	if (pTwoPyramid[playerChosenIndex + 5] != "-")
 	{
@@ -1489,7 +1490,7 @@ void validateTurn() {
 	}
 	else {
 		inputChosenIndex(pTwoChosenIndex);
-		while (!addCardpTwo(pTwoChosenCard, pTwoChosenIndex)) {
+		while (!addCardpTwo(pTwoChosenCard, pTwoChosenIndex, false)) {
 			cout << "This turn is not possible. Please try again." << endl;
 			system("pause");
 
