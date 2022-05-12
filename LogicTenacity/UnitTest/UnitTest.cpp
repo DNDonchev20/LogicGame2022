@@ -99,6 +99,38 @@ namespace UnitTesting
 				Assert::AreEqual(result, expected, L"Expected false!");
 			}
 			
+			TEST_METHOD(TestcheckNotCardpOneFunctionOne)
+			{
+				bool expected;
+				bool result;
+
+				result = checkNotCardpOne(4, 5, 3);
+				expected = false;
+
+				Assert::AreEqual(result, expected, L"Expected false!");
+			}
+
+				TEST_METHOD(TestcheckNotCardpOneFunctionTwo)
+			{
+				bool expected;
+				bool result;
+
+				result = checkNotCardpOne(1, 2, 3);
+				expected = false;
+
+				Assert::AreEqual(result, expected, L"Expected false!");
+			}
+
+				TEST_METHOD(TestcheckNotCardpOneFunctionThree)
+				{
+					bool expected;
+					bool result;
+
+					result = checkNotCardpOne(5, 5, 6);
+					expected = false;
+
+					Assert::AreEqual(result, expected, L"Expected false!");
+				}
 
 	};
 }
