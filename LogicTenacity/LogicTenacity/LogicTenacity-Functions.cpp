@@ -11,6 +11,7 @@ using namespace std;
 string cards[48];
 string baseCardspOne[6];
 string baseCardspTwo[6];
+
 string firstRowpOne[5];
 string firstRowpTwo[5];
 
@@ -51,6 +52,9 @@ void inputChosenIndex(int& playerChosenIndex)
 {
 	cout << "Select an index: ";
 	cin >> playerChosenIndex;
+
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
 //Play have to choose what card to play
@@ -58,6 +62,9 @@ void inputChosenCard(int& playerChosenCard)
 {
 	cout << "Select a card: ";
 	cin >> playerChosenCard;
+
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 	while (playerChosenCard < 1 || playerChosenCard > 5) {
 		cout << "The card number is not correct! Please try again... " << endl;
@@ -68,6 +75,8 @@ void inputChosenCard(int& playerChosenCard)
 
 		cout << endl << "Select a card: ";
 		cin >> playerChosenCard;
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 	}
 }
 
@@ -1091,6 +1100,9 @@ void counterEnemyNotCard()
 	int choiceToCounterOrNot;
 	cin >> choiceToCounterOrNot;
 
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
 	if (choiceToCounterOrNot == 1)
 	{
 		cout << "You countered him. Now it's other player turn!" << endl;
@@ -1253,7 +1265,11 @@ bool counterpOne()
 	cout << "Player One do you want to counter PLayer Two's not card?";
 	cout << "1. Yes";
 	cout << "2.No";
+
 	cin >> input;
+
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 	if (input == "1")
 	{
@@ -1271,7 +1287,11 @@ bool counterpTwo()
 	cout << "Player Two do you want to counter PLayer One's not card?";
 	cout << "1. Yes";
 	cout << "2.No";
+
 	cin >> input;
+
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 	if (input == "1")
 	{
@@ -1367,6 +1387,10 @@ void allRendering()
 			system("cls");
 			allRendering();
 			cin >> choisePCorP;
+
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
 			system("cls");
 		}	
 	}
