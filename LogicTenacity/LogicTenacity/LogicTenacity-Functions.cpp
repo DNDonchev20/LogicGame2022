@@ -1333,11 +1333,10 @@ void printOptionMenuPCorP()
 }
 
 bool PCorPMenu = true;
+string choisePCorP = "";
 void allRendering()
 {
 	checkIfMainDeckIsEmpty();
-
-	int choisePCorP;
 
 	if (PCorPMenu == true)
 	{
@@ -1348,17 +1347,28 @@ void allRendering()
 
 		cout << "Your choice: ";
 		cin >> choisePCorP;
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-		system("pause");
-		system("cls");
-
-		if (choisePCorP == 1)
+		if (choisePCorP == "1")
 		{
 			isBot = true;
+			system("pause");
+			system("cls");
+		}
+		else if (choisePCorP == "2") {
+			isBot = false;
+			system("pause");
+			system("cls");
 		}
 		else {
-			isBot = false;
-		}
+			cout << "Wrong input. Please try again!" << endl;
+			system("pause");
+			system("cls");
+			allRendering();
+			cin >> choisePCorP;
+			system("cls");
+		}	
 	}
 
 	PCorPMenu = false;
@@ -1415,7 +1425,9 @@ bool botTurnNotCard()
 	}
 
 }
+
 void botTurn() {
+
 	srand(time(NULL));
 	vector< pair<int, int>  > possible; //.first is card, .second is index
 	for (int i = 1; i <= 15; i++) // check all indexes
@@ -1434,10 +1446,6 @@ void botTurn() {
 			possible[index].second);
 		deleteCard(2, possible[index].first);
 	}
-	
-		
-	
-
 }
 
 //checks if player has chosen the right card
@@ -1600,8 +1608,7 @@ void choiseF()
 				}
 				
 				
-			}
-			
+			}	
 		}
 		else
 		{
@@ -1698,8 +1705,6 @@ void choiseF()
 				{
 					playerOnTurn = false;
 				}
-
-
 				allRendering();
 			}
 
