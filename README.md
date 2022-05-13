@@ -1,5 +1,7 @@
 <h1 align="center">Logic game Project</h1>
+
 <h6 align="center">LogicTenacity</h6>
+
 <p align="center">
 <img src="https://cdn.discordapp.com/attachments/967005656261480473/969991058161283072/LogicTenacity.3-removebg-preview.png" width="500px">
 </p>
@@ -12,13 +14,16 @@
 * **Trani Tranev** - *QA Engineer* 
 
 
-## 🚀 Languages and tools:
+## 🚀 Used Technologies:
 
 <p align="left"> 
     <img src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png"/>
     <img src="https://www.sfml-dev.org/download/goodies/sfml-icon-small.png" width="48px" height="48px"/>
     <img src="https://img.icons8.com/fluency/48/000000/visual-studio-2019.png"/>
     <img src="https://img.icons8.com/color/48/000000/figma--v1.png"/>
+    <img src="https://img.icons8.com/fluent/48/000000/microsoft-word-2019.png"/>
+    <img src="https://img.icons8.com/color/48/000000/microsoft-powerpoint-2019--v1.png"/>
+    <img src="https://img.icons8.com/color/48/000000/microsoft-excel-2019--v1.png"/>
   
   
   
@@ -33,7 +38,7 @@
 ## 📋 Description:
     
 
-*This repo is all about our Logic game Project. Our task was to create a game in C++ called "Boole0".*
+*This repository is all about our Logic game Project. Our task was to recreate a game in C++ called "Boole0".*
   
 
 ## ⚙ Installation
@@ -41,5 +46,5 @@
 You can download our project by using the green "Code" button.
 
 Or by pasting the following code in your CMD:
-https://github.com/DNDonchev20/logicGame2022.git
+git clone https://github.com/DNDonchev20/logicGame2022.git
 ```
