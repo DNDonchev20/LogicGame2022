@@ -148,11 +148,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="LogicTenacity-Functions.cpp" />
+    <ClCompile Include="Backend\LogicTenacity-Functions.cpp" />
     <ClCompile Include="LogicTenacity.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="LogicTenacity-Functions.h" />
+    <ClInclude Include="Backend\LogicTenacity-Functions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

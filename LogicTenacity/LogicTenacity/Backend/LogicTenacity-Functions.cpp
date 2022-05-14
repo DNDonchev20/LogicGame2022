@@ -1289,7 +1289,7 @@ bool counterpOne()
 bool counterpTwo()
 {
 	string input;
-	cout << playerTwo << " do you want to counter " << playerOne <<  " not card ? ";
+	cout << playerTwo << " do you want to counter " << playerOne << " not card ? ";
 	cout << "1. Yes";
 	cout << "2.No";
 
@@ -1326,7 +1326,7 @@ void drawPyramids()
 
 	cout << endl;
 
-	cout  << playerTwo << " pyramid: " << endl;
+	cout << playerTwo << " pyramid: " << endl;
 
 	for (int i = 0; i < 6; i++)
 	{
@@ -1413,7 +1413,7 @@ void allRendering()
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 			system("cls");
-		}	
+		}
 	}
 
 	PCorPMenu = false;
@@ -1449,7 +1449,7 @@ void allRendering()
 			}
 		}
 	}
-	cout << (pOnePyramid[20] != "-" ?  playerOneWin + " is winner" : playerTwoWin + " is winner");
+	cout << (pOnePyramid[20] != "-" ? playerOneWin + " is winner" : playerTwoWin + " is winner");
 	cout << endl;
 	system("pause");
 }
@@ -1650,9 +1650,9 @@ void choiseF()
 
 					allRendering();
 				}
-				
-				
-			}	
+
+
+			}
 		}
 		else
 		{

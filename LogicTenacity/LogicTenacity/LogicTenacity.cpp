@@ -4,7 +4,7 @@
 #include <vector>
 #include <iomanip>
 #include <cstdlib>
-#include "LogicTenacity-Functions.h"
+#include "Backend/LogicTenacity-Functions.h"
 using namespace std;
 
 int main()

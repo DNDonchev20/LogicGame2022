@@ -18,12 +18,12 @@
     <ClCompile Include="LogicTenacity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LogicTenacity-Functions.cpp">
+    <ClCompile Include="Backend\LogicTenacity-Functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="LogicTenacity-Functions.h">
+    <ClInclude Include="Backend\LogicTenacity-Functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
