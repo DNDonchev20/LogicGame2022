@@ -1395,8 +1395,6 @@ void allRendering()
 			getline(cin, playerOne);
 			playerOneWin = playerOne;
 			playerOne += "'s";
-			system("pause");
-			system("cls");
 			cout << "Player two enter your name : ";
 			getline(cin, playerTwo);
 			playerTwoWin = playerTwo;
