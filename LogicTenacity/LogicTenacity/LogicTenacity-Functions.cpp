@@ -1266,7 +1266,7 @@ void outputPlyerCards()
 bool counterpOne()
 {
 	string input;
-	cout << playerOne << " do you want to counter PLayer Two's not card?";
+	cout << playerOne << " do you want to counter " << playerTwo << " not card?";
 	cout << "1. Yes";
 	cout << "2.No";
 
@@ -1288,7 +1288,7 @@ bool counterpOne()
 bool counterpTwo()
 {
 	string input;
-	cout << playerTwo << " do you want to counter PLayer One's not card?";
+	cout << playerTwo << " do you want to counter " << playerOne <<  " not card ? ";
 	cout << "1. Yes";
 	cout << "2.No";
 
