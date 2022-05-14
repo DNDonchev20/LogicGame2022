@@ -14,6 +14,10 @@ string baseCardspTwo[6];
 
 string firstRowpOne[5];
 string firstRowpTwo[5];
+string playerOne;
+string playerTwo = "Bot's";
+string playerOneWin;
+string playerTwoWin;
 
 //not cards
 int notCardspOne = 4, notCardspTwo = 4;
@@ -1240,7 +1244,7 @@ void buildPyramindspTwo()
 //outputs player cards randomized
 void outputPlyerCards()
 {
-	cout << "Player one cards are: ";
+	cout << playerOne << " cards are : ";
 	for (int i = 0; i < 5; i++)
 	{
 		cout << i + 1 << ". " << pOne[i] << " ";
@@ -1249,7 +1253,7 @@ void outputPlyerCards()
 
 	cout << endl;
 
-	cout << "Player two cards are: ";
+	cout << playerTwo << " cards are: ";
 	for (int i = 0; i < 5; i++)
 	{
 		cout << i + 1 << ". " << pTwo[i] << " ";
@@ -1262,7 +1266,7 @@ void outputPlyerCards()
 bool counterpOne()
 {
 	string input;
-	cout << "Player One do you want to counter PLayer Two's not card?";
+	cout << playerOne << " do you want to counter PLayer Two's not card?";
 	cout << "1. Yes";
 	cout << "2.No";
 
@@ -1284,7 +1288,7 @@ bool counterpOne()
 bool counterpTwo()
 {
 	string input;
-	cout << "Player Two do you want to counter PLayer One's not card?";
+	cout << playerTwo << " do you want to counter PLayer One's not card?";
 	cout << "1. Yes";
 	cout << "2.No";
 
@@ -1307,7 +1311,7 @@ bool counterpTwo()
 void drawPyramids()
 {
 	cout << endl;
-	cout << "Player one pyramid: " << endl;
+	cout << playerOne << " pyramid: " << endl;
 
 	for (int i = 0; i < 6; i++)
 	{
@@ -1321,7 +1325,7 @@ void drawPyramids()
 
 	cout << endl;
 
-	cout << "Player two pyramid: " << endl;
+	cout  << playerTwo << " pyramid: " << endl;
 
 	for (int i = 0; i < 6; i++)
 	{
@@ -1375,9 +1379,27 @@ void allRendering()
 			isBot = true;
 			system("pause");
 			system("cls");
+			cout << "Enter your name : ";
+			getline(cin, playerOne);
+			playerOneWin = playerOne;
+			playerOne += "'s";
+			system("pause");
+			system("cls");
 		}
 		else if (choisePCorP == "2") {
 			isBot = false;
+			system("pause");
+			system("cls");
+			cout << "Player one enter your name : ";
+			getline(cin, playerOne);
+			playerOneWin = playerOne;
+			playerOne += "'s";
+			system("pause");
+			system("cls");
+			cout << "Player two enter your name : ";
+			getline(cin, playerTwo);
+			playerTwoWin = playerTwo;
+			playerTwo += "'s";
 			system("pause");
 			system("cls");
 		}
@@ -1404,7 +1426,7 @@ void allRendering()
 
 	while (pOnePyramid[20] == "-" && pTwoPyramid[20] == "-") {
 		if (playerOnTurn == true) {
-			cout << "Player one turn: ";
+			cout << playerOne << " turn: ";
 			printOptionMenu();
 			cout << "What do you want to play: ";
 			choiseF();
@@ -1412,13 +1434,13 @@ void allRendering()
 		else {
 			if (!isBot)
 			{
-				cout << "Player two turn:";
+				cout << playerTwo << " turn:";
 				printOptionMenu();
 				cout << "What do you want to play: ";
 				choiseF();
 			}
 			else {
-				cout << "Now it's bot turn" << endl;
+				cout << "Now it's bot's turn" << endl;
 				botTurn();
 				system("pause");
 				system("cls");
@@ -1428,8 +1450,7 @@ void allRendering()
 			}
 		}
 	}
-
-	cout << (pOnePyramid[20] != "-" ? "Player 1 is winner" : "Player 2 is winner");
+	cout << (pOnePyramid[20] != "-" ?  playerOneWin + " is winner" : playerTwoWin + " is winner");
 	cout << endl;
 	system("pause");
 }
@@ -1599,7 +1620,7 @@ void choiseF()
 			}
 			else
 			{
-				cout << "Now it's bot turn" << endl;
+				cout << "Now it's bot's turn" << endl;
 				if (botTurnNotCard())
 				{
 					flag = 1;
