@@ -1,7 +1,5 @@
-<h1 align="center">Logic game Project</h1>
-
-<h6 align="center">LogicTenacity</h6>
-
+<h1 align="center">LogicTenacity</h1>
+<br>
 <p align="center">
 <img src="https://cdn.discordapp.com/attachments/893001398646636544/974937196475850782/logoFinal.png" width="500px">
 </p>
@@ -40,7 +38,7 @@
 ## 📋 Description:
     
 
-*This repository is all about our Logic game Project. Our task was to recreate a game in C++ called "Boole0".*
+*This repository is all about our logic game project. Our task was to recreate a game in C++ called "BooleO".*
   
 
 ## ⚙ Installation
