@@ -29,11 +29,13 @@
   
 ## 📄 Documents
       
-  <img src="https://user-images.githubusercontent.com/75934947/166557467-b0db5298-0c01-4201-aad8-69f17a7104dd.png" width="20px" height="20px"/> [Word Documentation](https://codingburgas-my.sharepoint.com/:w:/r/personal/tstranev20_codingburgas_bg/_layouts/15/Doc.aspx?sourcedoc=%7B42C6EF32-E071-4C28-BCC4-0EE3236662CC%7D&file=LogicTenacity-Documentation.docx&action=default&mobileredirect=true)
+  <img src="https://user-images.githubusercontent.com/75934947/166557467-b0db5298-0c01-4201-aad8-69f17a7104dd.png" width="20px" height="20px"/> [Project Documentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/tstranev20_codingburgas_bg/ETLvxkJx4ChMvMQO4yNmYswBkyFunEZwmKjV2XZON0mx-Q?e=JT9d75)
   
-  <img src="https://user-images.githubusercontent.com/75934947/166558395-c1113581-36d0-4c2d-9c51-e1c4f7a32eb7.png" width="20px" height="20px"/> [PowerPoint Presentation](https://codingburgas-my.sharepoint.com/:p:/r/personal/tstranev20_codingburgas_bg/_layouts/15/Doc.aspx?sourcedoc=%7B9FE42C7D-ADE5-4EE5-9253-2C151FD62EDA%7D&file=LogicTenacity-Presentation.pptx&action=edit&mobileredirect=true)
+  <img src="https://user-images.githubusercontent.com/75934947/166558395-c1113581-36d0-4c2d-9c51-e1c4f7a32eb7.png" width="20px" height="20px"/> [Presentation](https://codingburgas-my.sharepoint.com/:p:/g/personal/tstranev20_codingburgas_bg/EX0s5J_lreVOklMsFR_WLtoBtlVX602N1zlyEVSaVIfLBA?e=HHRNzC)
+    
+ <img src="https://user-images.githubusercontent.com/75934947/166557467-b0db5298-0c01-4201-aad8-69f17a7104dd.png" width="20px" height="20px"/> [QA Documentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/tstranev20_codingburgas_bg/EaSOXgsVmo1AkUH3DBwqUmkBD5pItvL5R5PaIhU0L-LUWw?e=E82pcs)
   
-  
+  <img src="https://img.icons8.com/color/48/000000/microsoft-excel-2019--v1.png" width="20px" height="20px"/> [Test cases](https://codingburgas-my.sharepoint.com/:x:/g/personal/tstranev20_codingburgas_bg/ES60-rojMtlKk7d6sTiL7nIB0kYylMJKjp1VjxF6FeVRlA?e=MJqYkj)
     
 ## 📋 Description:
     
