@@ -500,7 +500,7 @@ void playNotCardpOne(int playerChosenIndex)
 	{
 		if (checkNotCardpOne(playerChosenIndex - 1, playerChosenIndex - 1, playerChosenIndex))
 		{
-
+			cout << "";
 		}
 		else
 		{
@@ -511,7 +511,7 @@ void playNotCardpOne(int playerChosenIndex)
 	{
 		if (checkNotCardpOne(playerChosenIndex - 1, playerChosenIndex - 2, playerChosenIndex - 1))
 		{
-
+			cout << "";
 		}
 		else
 		{
@@ -524,7 +524,7 @@ void playNotCardpOne(int playerChosenIndex)
 
 		if (checkNotCardpOne(playerChosenIndex - 1, playerChosenIndex - 1, playerChosenIndex))
 		{
-
+			cout << "";
 		}
 		else
 		{
@@ -532,7 +532,7 @@ void playNotCardpOne(int playerChosenIndex)
 		}
 		if (checkNotCardpOne(playerChosenIndex - 1, playerChosenIndex - 2, playerChosenIndex - 1))
 		{
-
+			cout << "";
 		}
 		else
 		{
@@ -549,7 +549,7 @@ void playNotCardpTwo(int playerChosenIndex)
 	{
 		if (checkNotCardpTwo(playerChosenIndex + 5, playerChosenIndex - 1, playerChosenIndex))
 		{
-
+			cout << "";
 		}
 		else
 		{
@@ -560,7 +560,7 @@ void playNotCardpTwo(int playerChosenIndex)
 	{
 		if (checkNotCardpTwo(playerChosenIndex + 5, playerChosenIndex - 2, playerChosenIndex - 1))
 		{
-
+			cout << "";
 		}
 		else
 		{
@@ -573,15 +573,16 @@ void playNotCardpTwo(int playerChosenIndex)
 
 		if (checkNotCardpTwo(playerChosenIndex + 6, playerChosenIndex - 1, playerChosenIndex))
 		{
-
+			cout << "";
 		}
 		else
 		{
 			pTwoPyramid[playerChosenIndex + 6] = '-';
 		}
+
 		if (checkNotCardpTwo(playerChosenIndex + 5, playerChosenIndex - 2, playerChosenIndex - 1))
 		{
-
+			cout << "";
 		}
 		else
 		{
