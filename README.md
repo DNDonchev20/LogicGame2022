@@ -48,3 +48,6 @@ You can download our project by using the green "Code" button.
 Or by pasting the following code in your CMD:
 git clone https://github.com/DNDonchev20/logicGame2022.git
 ```
+    
+<hr>
+<h2>🎉You can use our project to learn arithmetic operations in an easy way</h2>
