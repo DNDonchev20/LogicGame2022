@@ -3,7 +3,7 @@
 <h6 align="center">LogicTenacity</h6>
 
 <p align="center">
-<img src="https://cdn.discordapp.com/attachments/967005656261480473/969991058161283072/LogicTenacity.3-removebg-preview.png" width="500px">
+<img src="https://cdn.discordapp.com/attachments/893001398646636544/974937196475850782/logoFinal.png" width="500px">
 </p>
 
 
