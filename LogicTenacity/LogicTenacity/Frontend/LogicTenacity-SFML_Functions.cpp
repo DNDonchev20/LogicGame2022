@@ -30,20 +30,20 @@ void playMenu(sf::Event event, sf::Texture texture, sf::RenderWindow& window)
 					{
 						case sf::Mouse::Left:
 						{
-							if ((event.mouseButton.x >= 250 && event.mouseButton.x <= 540) &&
-								event.mouseButton.y >= 560 && event.mouseButton.y <= 680)
+							if ((event.mouseButton.x >= 140 && event.mouseButton.x <= 630) &&
+								event.mouseButton.y >= 350 && event.mouseButton.y <= 410)
 							{
 								setup(true);
 							}
 
-							else if ((event.mouseButton.x >= 270 && event.mouseButton.x <= 530) &&
-								event.mouseButton.y >= 300 && event.mouseButton.y <= 430)
+							else if ((event.mouseButton.x >= 100 && event.mouseButton.x <= 700) &&
+								event.mouseButton.y >= 520 && event.mouseButton.y <= 580)
 							{
 								setup(false);
 							}
 
-							else if ((event.mouseButton.x >= 30 && event.mouseButton.x <= 220) &&
-								event.mouseButton.y >= 710 && event.mouseButton.y <= 780)
+							else if ((event.mouseButton.x >= 30 && event.mouseButton.x <= 440) &&
+								event.mouseButton.y >= 740 && event.mouseButton.y <= 800)
 							{
 								return;
 							}
@@ -116,6 +116,7 @@ void tutorialMenu(sf::Event event, sf::Texture texture, sf::RenderWindow& window
 	}
 }
 
+// how to play menu
 void howToPlayMenu(sf::Event event, sf::Texture texture, sf::RenderWindow& window)
 {
 	while (true)
@@ -134,8 +135,8 @@ void howToPlayMenu(sf::Event event, sf::Texture texture, sf::RenderWindow& windo
 					{
 						case sf::Mouse::Left:
 						{
-							if ((event.mouseButton.x >= 20 && event.mouseButton.x <= 230) &&
-								event.mouseButton.y >= 370 && event.mouseButton.y <= 410)
+							if ((event.mouseButton.x >= 40 && event.mouseButton.x <= 450) &&
+								event.mouseButton.y >= 740 && event.mouseButton.y <= 800)
 							{
 								return;
 							}
