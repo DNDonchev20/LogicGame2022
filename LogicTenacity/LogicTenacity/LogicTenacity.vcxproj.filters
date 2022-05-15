@@ -21,9 +21,15 @@
     <ClCompile Include="Backend\LogicTenacity-Functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Frontend\Frontend-Functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Backend\LogicTenacity-Functions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Frontend\Frontend-Functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

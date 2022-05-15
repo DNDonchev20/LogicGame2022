@@ -5,7 +5,12 @@
 #include <iomanip>
 #include <cstdlib>
 #include "LogicTenacity-Functions.h"
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
+
 using namespace std;
+
+bool isBot;
 
 //all cards
 string cards[48];
@@ -30,9 +35,6 @@ int pTwoChosenCard = 0;
 
 //this bools decide who has the turn
 bool playerOnTurn = true;
-
-//this bool decide if you are playing with a bot or not
-bool isBot = true;
 
 //choise to place or to delete a card
 string choise;
@@ -1267,8 +1269,8 @@ void outputPlyerCards()
 bool counterpOne()
 {
 	string input;
-	cout << playerOne << " do you want to counter " << playerTwo << " not card?";
-	cout << "1. Yes";
+	cout << playerOne << " do you want to counter " << playerTwo << " not card?" << endl;
+	cout << "1. Yes ";
 	cout << "2.No";
 
 	cin >> input;
@@ -1365,15 +1367,24 @@ void allRendering()
 
 	if (PCorPMenu == true)
 	{
-		cout << endl;
-		cout << "What do you want to play against. Computer or other player?";
+		//cout << endl;
+		//cout << "What do you want to play against. Computer or other player?";
 
-		printOptionMenuPCorP();
+		//printOptionMenuPCorP();
 
-		cout << "Your choice: ";
-		cin >> choisePCorP;
-		cin.clear();
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		///*cout << "Your choice: ";
+		//cin >> choisePCorP;
+		//cin.clear();
+		//cin.ignore(numeric_limits<streamsize>::max(), '\n');*/
+
+		if (isBot)
+		{
+			choisePCorP = "1";
+		}
+		else
+		{
+			choisePCorP = "2";
+		}
 
 		if (choisePCorP == "1")
 		{
@@ -1755,8 +1766,10 @@ void choiseF()
 	}
 }
 
-void setup()
+void setup(bool m_isBot)
 {
+	isBot = m_isBot;
+
 	system("color 1f");
 
 	fillingCardArrays();

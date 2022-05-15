@@ -6,7 +6,12 @@
 #include <vector>
 #include <iomanip>
 #include <cstdlib>
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
+
 using namespace std;
+
+extern bool isBot;
 
 void inputChosenIndex(int& playerChosenIndex);
 
@@ -70,7 +75,7 @@ void printOptionMenu();
 
 void printOptionMenuPCorP();
 
-void allRendering();
+void allRendering(bool m_isBot);
 
 void botTurn();
 
@@ -78,4 +83,4 @@ void validateTurn();
 
 void choiseF();
 
-void setup();
+void setup(bool m_isBot);
