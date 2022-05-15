@@ -8,7 +8,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include "../LogicTenacity/Backend/LogicTenacity-Functions.h"
-#include "../LogicTenacity/Frontend/Frontend-Functions.h"
+#include "../LogicTenacity/Frontend/LogicTenacity-SFML-Functions.h"
 
 using namespace std;
 

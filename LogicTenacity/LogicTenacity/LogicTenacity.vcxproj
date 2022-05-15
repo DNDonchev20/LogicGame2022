@@ -149,12 +149,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Backend\LogicTenacity-Functions.cpp" />
-    <ClCompile Include="Frontend\Frontend-Functions.cpp" />
+    <ClCompile Include="Frontend\LogicTenacity-SFML_Functions.cpp" />
     <ClCompile Include="LogicTenacity.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Backend\LogicTenacity-Functions.h" />
-    <ClInclude Include="Frontend\Frontend-Functions.h" />
+    <ClInclude Include="Frontend\LogicTenacity-SFML-Functions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

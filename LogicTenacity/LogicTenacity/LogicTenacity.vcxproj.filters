@@ -21,7 +21,7 @@
     <ClCompile Include="Backend\LogicTenacity-Functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Frontend\Frontend-Functions.cpp">
+    <ClCompile Include="Frontend\LogicTenacity-SFML_Functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="Backend\LogicTenacity-Functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Frontend\Frontend-Functions.h">
+    <ClInclude Include="Frontend\LogicTenacity-SFML-Functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

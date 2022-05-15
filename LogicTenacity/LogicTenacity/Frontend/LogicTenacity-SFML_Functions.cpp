@@ -6,7 +6,7 @@
 #include <cstdlib>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
-#include "../Frontend/Frontend-Functions.h"
+#include "../Frontend/LogicTenacity-SFML-Functions.h"
 #include "../Backend/LogicTenacity-Functions.h"
 
 using namespace std;
