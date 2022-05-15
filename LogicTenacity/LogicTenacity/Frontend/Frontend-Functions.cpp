@@ -11,6 +11,54 @@
 
 using namespace std;
 
+// play menu
+void playMenu(sf::Event event, sf::Texture texture, sf::RenderWindow& window)
+{
+	while (true)
+	{
+		texture.loadFromFile("../Images/playMenu.png");
+
+		sf::Sprite sprite(texture);
+
+		while (window.pollEvent(event))
+		{
+			switch (event.type)
+			{
+			case sf::Event::MouseButtonPressed:
+			{
+				switch (event.key.code)
+				{
+				case sf::Mouse::Left:
+				{
+					if ((event.mouseButton.x >= 250 && event.mouseButton.x <= 540) &&
+						event.mouseButton.y >= 560 && event.mouseButton.y <= 680)
+					{
+						setup(true);
+					}
+
+					else if ((event.mouseButton.x >= 270 && event.mouseButton.x <= 530) &&
+						event.mouseButton.y >= 300 && event.mouseButton.y <= 430)
+					{
+						setup(false);
+					}
+
+					else if ((event.mouseButton.x >= 30 && event.mouseButton.x <= 220) &&
+						event.mouseButton.y >= 710 && event.mouseButton.y <= 780)
+					{
+						return;
+					}
+					break;
+				}
+				break;
+				}
+			}
+			}
+		}
+		window.draw(sprite);
+		window.display();
+	}
+}
+
 // tutorial menu
 void tutorialMenu(sf::Event event, sf::Texture texture, sf::RenderWindow& window)
 {
