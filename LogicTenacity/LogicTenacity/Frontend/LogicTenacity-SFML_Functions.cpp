@@ -141,7 +141,7 @@ void howToPlayMenu(sf::Event event, sf::Texture texture, sf::RenderWindow& windo
 // main menu
 void startupMenu()
 {
-	sf::RenderWindow window{ sf::VideoMode(800,890), "Boole0", sf::Style::Titlebar | sf::Style::Close };
+	sf::RenderWindow window{ sf::VideoMode(800,890), "Logic Tenacity", sf::Style::Titlebar | sf::Style::Close };
 
 	sf::Texture texture;
 	texture.loadFromFile("../Images/menu.png");
