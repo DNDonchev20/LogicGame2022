@@ -24,36 +24,50 @@ void playMenu(sf::Event event, sf::Texture texture, sf::RenderWindow& window)
 		{
 			switch (event.type)
 			{
-			case sf::Event::MouseButtonPressed:
-			{
-				switch (event.key.code)
+				case sf::Event::MouseButtonPressed:
 				{
-				case sf::Mouse::Left:
-				{
-					if ((event.mouseButton.x >= 250 && event.mouseButton.x <= 540) &&
-						event.mouseButton.y >= 560 && event.mouseButton.y <= 680)
+					switch (event.key.code)
 					{
-						setup(true);
-					}
+						case sf::Mouse::Left:
+						{
+							if ((event.mouseButton.x >= 250 && event.mouseButton.x <= 540) &&
+								event.mouseButton.y >= 560 && event.mouseButton.y <= 680)
+							{
+								setup(true);
+							}
 
-					else if ((event.mouseButton.x >= 270 && event.mouseButton.x <= 530) &&
-						event.mouseButton.y >= 300 && event.mouseButton.y <= 430)
-					{
-						setup(false);
-					}
+							else if ((event.mouseButton.x >= 270 && event.mouseButton.x <= 530) &&
+								event.mouseButton.y >= 300 && event.mouseButton.y <= 430)
+							{
+								setup(false);
+							}
 
-					else if ((event.mouseButton.x >= 30 && event.mouseButton.x <= 220) &&
-						event.mouseButton.y >= 710 && event.mouseButton.y <= 780)
-					{
-						return;
+							else if ((event.mouseButton.x >= 30 && event.mouseButton.x <= 220) &&
+								event.mouseButton.y >= 710 && event.mouseButton.y <= 780)
+							{
+								return;
+							}
+							break;
+						}
+						break;
 					}
-					break;
 				}
-				break;
-				}
-			}
 			}
 		}
+		window.draw(sprite);
+		window.display();
+	}
+}
+
+// practice menu
+void practiceMenu(sf::Event event, sf::Texture texture, sf::RenderWindow& window)
+{
+	while (true)
+	{
+		texture.loadFromFile("../Images/practice.png");
+
+		sf::Sprite sprite(texture);
+
 		window.draw(sprite);
 		window.display();
 	}
@@ -72,29 +86,23 @@ void tutorialMenu(sf::Event event, sf::Texture texture, sf::RenderWindow& window
 		{
 			switch (event.type)
 			{
-			case sf::Event::MouseButtonPressed:
-			{
-				switch (event.key.code)
+				case sf::Event::MouseButtonPressed:
 				{
-				case sf::Mouse::Left:
-				{
-					if ((event.mouseButton.x >= 480 && event.mouseButton.x <= 750) &&
-						event.mouseButton.y >= 720 && event.mouseButton.y <= 800)
+					switch (event.key.code)
 					{
-						// future idea
-						texture.loadFromFile("../Images/practice.png");
+						case sf::Mouse::Left:
+						{
+							if ((event.mouseButton.x >= 480 && event.mouseButton.x <= 750) &&
+							event.mouseButton.y >= 720 && event.mouseButton.y <= 800)
+							{
+								// future idea
+								practiceMenu(event, texture, window);
+							}
+							break;
+						}
+						break;
 					}
-
-					else if ((event.mouseButton.x >= 10 && event.mouseButton.x <= 300) &&
-						event.mouseButton.y >= 720 && event.mouseButton.y <= 800)
-					{
-						return;
-					}
-					break;
 				}
-				break;
-				}
-			}
 			}
 		}
 		window.draw(sprite);
@@ -120,11 +128,10 @@ void howToPlayMenu(sf::Event event, sf::Texture texture, sf::RenderWindow& windo
 					{
 						case sf::Mouse::Left:
 						{
-							if ((event.mouseButton.x >= 480 && event.mouseButton.x <= 750) &&
-							event.mouseButton.y >= 720 && event.mouseButton.y <= 800)
+							if ((event.mouseButton.x >= 20 && event.mouseButton.x <= 230) &&
+								event.mouseButton.y >= 370 && event.mouseButton.y <= 410)
 							{
-								// future idea
-								texture.loadFromFile("../Images/practice.png");
+								return;
 							}
 							break;
 						}
