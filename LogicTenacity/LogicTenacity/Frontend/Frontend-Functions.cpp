@@ -11,6 +11,42 @@
 
 using namespace std;
 
+void howToPlayMenu(sf::Event event, sf::Texture texture, sf::RenderWindow& window)
+{
+	while (true)
+	{
+		texture.loadFromFile("../Images/howToPlay.png");
+
+		sf::Sprite sprite(texture);
+
+		while (window.pollEvent(event))
+		{
+			switch (event.type)
+			{
+			case sf::Event::MouseButtonPressed:
+			{
+				switch (event.key.code)
+				{
+				case sf::Mouse::Left:
+				{
+					if ((event.mouseButton.x >= 480 && event.mouseButton.x <= 750) &&
+						event.mouseButton.y >= 720 && event.mouseButton.y <= 800)
+					{
+						// future idea
+						texture.loadFromFile("../Images/practice.png");
+					}
+					break;
+				}
+				break;
+				}
+			}
+			}
+		}
+		window.draw(sprite);
+		window.display();
+	}
+}
+
 // main menu
 void startupMenu()
 {
