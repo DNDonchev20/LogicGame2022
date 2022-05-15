@@ -98,6 +98,12 @@ void tutorialMenu(sf::Event event, sf::Texture texture, sf::RenderWindow& window
 								// future idea
 								practiceMenu(event, texture, window);
 							}
+
+							else if ((event.mouseButton.x >= 10 && event.mouseButton.x <= 300) &&
+								event.mouseButton.y >= 720 && event.mouseButton.y <= 800)
+							{
+								return;
+							}
 							break;
 						}
 						break;
