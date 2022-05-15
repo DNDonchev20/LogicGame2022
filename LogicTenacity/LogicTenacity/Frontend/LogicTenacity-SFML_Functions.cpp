@@ -33,13 +33,13 @@ void playMenu(sf::Event event, sf::Texture texture, sf::RenderWindow& window)
 							if ((event.mouseButton.x >= 140 && event.mouseButton.x <= 630) &&
 								event.mouseButton.y >= 350 && event.mouseButton.y <= 410)
 							{
-								setup(true);
+								setup(false);
 							}
 
 							else if ((event.mouseButton.x >= 100 && event.mouseButton.x <= 700) &&
 								event.mouseButton.y >= 520 && event.mouseButton.y <= 580)
 							{
-								setup(false);
+								setup(true);
 							}
 
 							else if ((event.mouseButton.x >= 30 && event.mouseButton.x <= 440) &&
