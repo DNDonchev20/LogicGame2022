@@ -6,8 +6,6 @@
 #include <vector>
 #include <iomanip>
 #include <cstdlib>
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
 
 using namespace std;
 

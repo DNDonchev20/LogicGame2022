@@ -114,23 +114,23 @@ void howToPlayMenu(sf::Event event, sf::Texture texture, sf::RenderWindow& windo
 		{
 			switch (event.type)
 			{
-			case sf::Event::MouseButtonPressed:
-			{
-				switch (event.key.code)
+				case sf::Event::MouseButtonPressed:
 				{
-				case sf::Mouse::Left:
-				{
-					if ((event.mouseButton.x >= 480 && event.mouseButton.x <= 750) &&
-						event.mouseButton.y >= 720 && event.mouseButton.y <= 800)
+					switch (event.key.code)
 					{
-						// future idea
-						texture.loadFromFile("../Images/practice.png");
+						case sf::Mouse::Left:
+						{
+							if ((event.mouseButton.x >= 480 && event.mouseButton.x <= 750) &&
+							event.mouseButton.y >= 720 && event.mouseButton.y <= 800)
+							{
+								// future idea
+								texture.loadFromFile("../Images/practice.png");
+							}
+							break;
+						}
+						break;
 					}
-					break;
 				}
-				break;
-				}
-			}
 			}
 		}
 		window.draw(sprite);
@@ -156,44 +156,44 @@ void startupMenu()
 		{
 			switch (event.type)
 			{
-			case sf::Event::MouseButtonPressed:
-			{
-				switch (event.key.code)
+				case sf::Event::MouseButtonPressed:
 				{
-				case sf::Mouse::Left:
-				{
-					// Play
-					if ((event.mouseButton.x >= 300 && event.mouseButton.x <= 520) &&
-						event.mouseButton.y >= 350 && event.mouseButton.y <= 400)
+					switch (event.key.code)
 					{
-						playMenu(event, texture, window);
-					}
+						case sf::Mouse::Left:
+						{
+							// Play
+							if ((event.mouseButton.x >= 300 && event.mouseButton.x <= 520) &&
+							event.mouseButton.y >= 350 && event.mouseButton.y <= 400)
+							{
+								playMenu(event, texture, window);
+							}
 
-					// How to play
-					else if ((event.mouseButton.x >= 220 && event.mouseButton.x <= 570) &&
-						event.mouseButton.y >= 460 && event.mouseButton.y <= 510)
-					{
-						howToPlayMenu(event, texture, window);
-					}
+							// How to play
+							else if ((event.mouseButton.x >= 220 && event.mouseButton.x <= 570) &&
+							event.mouseButton.y >= 460 && event.mouseButton.y <= 510)
+							{
+								howToPlayMenu(event, texture, window);
+							}
 
-					// Tutorial
-					else if ((event.mouseButton.x >= 300 && event.mouseButton.x <= 510) &&
-						event.mouseButton.y >= 580 && event.mouseButton.y <= 630)
-					{
-						tutorialMenu(event, texture, window);
-					}
+							// Tutorial
+							else if ((event.mouseButton.x >= 300 && event.mouseButton.x <= 510) &&
+							event.mouseButton.y >= 580 && event.mouseButton.y <= 630)
+							{
+								tutorialMenu(event, texture, window);
+							}
 
-					// Exit
-					else if ((event.mouseButton.x >= 350 && event.mouseButton.x <= 460) &&
-						event.mouseButton.y >= 700 && event.mouseButton.y <= 760)
-					{
-						window.close();
+							// Exit
+							else if ((event.mouseButton.x >= 350 && event.mouseButton.x <= 460) &&
+							event.mouseButton.y >= 700 && event.mouseButton.y <= 760)
+							{
+								window.close();
+							}
+							break;
+						}
 					}
 					break;
 				}
-				}
-				break;
-			}
 			}
 		}
 		window.draw(sprite);

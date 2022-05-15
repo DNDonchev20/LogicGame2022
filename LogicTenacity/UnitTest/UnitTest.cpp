@@ -1,7 +1,6 @@
-#include "pch.h"
 #include "CppUnitTest.h"
-#include "../LogicTenacity/LogicTenacity-Functions.h"
-#include "../LogicTenacity/LogicTenacity-Functions.cpp"
+#include "../LogicTenacity/Backend/LogicTenacity-Functions.cpp"
+#include "../LogicTenacity/Backend/LogicTenacity-Functions.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
