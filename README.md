@@ -17,7 +17,6 @@
 <p align="left"> 
     <img src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png"/>
     <img src="https://www.sfml-dev.org/download/goodies/sfml-icon-small.png" width="48px" height="48px"/>
-    <img src="https://img.icons8.com/fluency/48/000000/visual-studio-2019.png"/>
     <img src="https://img.icons8.com/color/48/000000/figma--v1.png"/>
     <img src="https://img.icons8.com/fluent/48/000000/microsoft-word-2019.png"/>
     <img src="https://img.icons8.com/color/48/000000/microsoft-powerpoint-2019--v1.png"/>
